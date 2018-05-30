@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "NODE_ENV=test mocha test/src/*",
+    "apidoc": "node apidoc/apidoc.js"
+  },
+  "dependencies": {
+    "chakram": "^1.5.0",
+    "docprint": "yamorijp/docprint#diy",
+    "mocha": "^5.2.0"
+  }
+}

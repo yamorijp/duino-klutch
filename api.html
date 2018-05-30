@@ -1,0 +1,1210 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Overview</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}body{color:black;background:white;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid #f2f2f2;margin-bottom:12px}h1,h2,h3,h4,h5{color:black;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:36px}h2{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#428bca;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(0,0,0,0.2) 51.4%, rgba(255,255,255,0.2) 51.4%, rgba(255,255,255,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(0,0,0,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:6px;overflow:auto}pre code{color:black;background-color:transparent;padding:0;border:none}code{color:#444;background-color:#f5f5f5;font:'Inconsolata',monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #e6e6e6}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:200 36px 'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:black;background-color:#f0f6fb;border-left:4px solid #428bca}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#428bca}.warning{color:black;background-color:#fbf1f0;border-left:4px solid #c9302c}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#c9302c}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:black;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(0,0,0,0.7);padding:8px 12px;border-top:1px solid #d9d9d9;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#000;background-color:#f2f2f2;border-radius:10px;margin:-2px 0}.badge.get{color:#70bbe1;background-color:#d9edf7}.badge.head{color:#70bbe1;background-color:#d9edf7}.badge.options{color:#70bbe1;background-color:#d9edf7}.badge.put{color:#f0db70;background-color:#fcf8e3}.badge.patch{color:#f0db70;background-color:#fcf8e3}.badge.post{color:#93cd7c;background-color:#dff0d8}.badge.delete{color:#ce8383;background-color:#f2dede}.collapse-button{float:right}.collapse-button .close{display:none;color:#428bca;cursor:pointer}.collapse-button .open{color:#428bca;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:16.5%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:16.5%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:51.5%;padding-right:12px}.right{box-sizing:border-box;float:right;width:48.5%;padding-left:12px}.right a{color:#428bca}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:white}.right pre{background-color:#1d1f21;border:1px solid #1d1f21}.right pre code{color:#c5c8c6}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e8ab8}.definition .method.head{color:#2e8ab8}.definition .method.options{color:#2e8ab8}.definition .method.post{color:#56b82e}.definition .method.put{color:#b8a22e}.definition .method.patch{color:#b8a22e}.definition .method.delete{color:#b82e2e}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:6px}.example-names .tab-button{cursor:pointer;color:black;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#444}.right .example-names .tab-button{color:white;border:1px solid #666;border-radius:6px}.right .example-names .tab-button.active{background-color:#5e5e5e}#nav-background{position:fixed;left:0;top:0;bottom:0;width:16.5%;padding-right:14.4px;background-color:#fbfbfb;border-right:1px solid #f0f0f0;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:48.6%;background-color:#333;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:48.6%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(0,0,0,0.5);background-color:#f2f2f2;text-decoration:none !important;border-top:1px solid #d9d9d9;border-left:1px solid #d9d9d9;border-right:1px solid #d9d9d9;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:white;border:1px solid #d9d9d9;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#f2f2f2;border-bottom:1px solid #d9d9d9;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid #d9d9d9}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:6px 12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal;padding:6px 0}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px;display:inline-block}.action h4.action-heading .method.get{color:#fff;background-color:#337ab7}.action h4.action-heading .method.head{color:#fff;background-color:#337ab7}.action h4.action-heading .method.options{color:#fff;background-color:#337ab7}.action h4.action-heading .method.put{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.patch{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.post{color:#fff;background-color:#5cb85c}.action h4.action-heading .method.delete{color:#fff;background-color:#d9534f}.action h4.action-heading code{color:#444;background-color:#f5f5f5;border-color:#cfcfcf;font-weight:normal;word-break:break-all;display:inline-block;margin-top:2px}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid white;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#bce8f1}.action.get h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.head{border-color:#bce8f1}.action.head h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.options{border-color:#bce8f1}.action.options h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.post{border-color:#d6e9c6}.action.post h4.action-heading{color:#5cb85c;background:#dff0d8;border-bottom-color:#d6e9c6}.action.put{border-color:#faebcc}.action.put h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.patch{border-color:#faebcc}.action.patch h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.delete{border-color:#ebccd1}.action.delete h4.action-heading{color:#d9534f;background:#f2dede;border-bottom-color:#ebccd1}</style></head><body class="preload"><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#top">Overview</a></div><div class="collapse-content"><ul><li><a href="#header-websocket">WebSocket</a></li><li><a href="#header-ソースコード">ソースコード</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#switch">Switch</a></div><div class="collapse-content"><ul><li><a href="#switch-リレースイッチ">リレースイッチ</a><ul><li><a href="#switch-リレースイッチ-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>リレースイッチオン</a></li><li><a href="#switch-リレースイッチ-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>リレースイッチオフ</a></li><li><a href="#switch-リレースイッチ-get-2"><span class="badge get"><i class="fa fa-arrow-down"></i></span>リレースイッチトグル</a></li><li><a href="#switch-リレースイッチ-get-3"><span class="badge get"><i class="fa fa-arrow-down"></i></span>リレースイッチ状態</a></li></ul></li><li><a href="#switch-モーション感知スイッチ-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>状態</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#led">LED</a></div><div class="collapse-content"><ul><li><a href="#led-rgb-led">RGB LED</a><ul><li><a href="#led-rgb-led-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>点灯</a></li><li><a href="#led-rgb-led-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>消灯</a></li><li><a href="#led-rgb-led-get-2"><span class="badge get"><i class="fa fa-arrow-down"></i></span>状態</a></li></ul></li><li><a href="#led-4桁7セグメントled">4桁7セグメントLED</a><ul><li><a href="#led-4桁7セグメントled-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ディスプレイ消灯</a></li><li><a href="#led-4桁7セグメントled-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>数値</a></li><li><a href="#led-4桁7セグメントled-get-2"><span class="badge get"><i class="fa fa-arrow-down"></i></span>セグメント</a></li><li><a href="#led-4桁7セグメントled-get-3"><span class="badge get"><i class="fa fa-arrow-down"></i></span>カウントアップ／ダウン</a></li><li><a href="#led-4桁7セグメントled-get-4"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ロール</a></li></ul></li><li><a href="#led-8x8マトリクスled">8x8マトリクスLED</a><ul><li><a href="#led-8x8マトリクスled-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>マトリクスLED消灯</a></li><li><a href="#led-8x8マトリクスled-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>メッセージ</a></li><li><a href="#led-8x8マトリクスled-get-2"><span class="badge get"><i class="fa fa-arrow-down"></i></span>次のメッセージ</a></li><li><a href="#led-8x8マトリクスled-get-3"><span class="badge get"><i class="fa fa-arrow-down"></i></span>列指定</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#sensor">Sensor</a></div><div class="collapse-content"><ul><li><a href="#sensor-湿温度-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>温湿度</a></li><li><a href="#sensor-明るさセンサー-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>明るさ</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#ir">IR</a></div><div class="collapse-content"><ul><li><a href="#ir-赤外線送信">赤外線送信</a><ul><li><a href="#ir-赤外線送信-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Raw</a></li><li><a href="#ir-赤外線送信-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>送信</a></li><li><a href="#ir-赤外線送信-get-2"><span class="badge get"><i class="fa fa-arrow-down"></i></span>コマンド</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#others">Others</a></div><div class="collapse-content"><ul><li><a href="#others-その他">その他</a><ul><li><a href="#others-その他-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>リセット</a></li><li><a href="#others-その他-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>再起動</a></li><li><a href="#others-その他-get-2"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ヒープメモリ</a></li><li><a href="#others-その他-get-3"><span class="badge get"><i class="fa fa-arrow-down"></i></span>モジュール情報</a></li></ul></li></ul></div></div><p style="text-align: center; word-wrap: break-word;"><a href="http://duino-k.local">http://duino-k.local</a></p></nav><div class="content"><header><h1 id="top">Overview</h1></header><p>接続モジュールのセンサー値取得や制御を行うWebAPIです。</p>
+<p>レスポンス仕様は<a href="https://labs.omniti.com/labs/jsend">Jsend</a>に準拠しています。</p>
+<div class="note">
+<p>当ドキュメントに記載の場合でも、実際に使用可能なエンドポイントはビルド構成によって異なります。</p>
+</div>
+<h2 id="header-websocket">WebSocket <a class="permalink" href="#header-websocket" aria-hidden="true">¶</a></h2>
+<p>一部のモジュールはWebSocketを通じて状態の変化を受信できます。</p>
+<p>対応モジュール: <code>AnalogSensor</code>, <code>InputSwitch</code>, <code>OutputSwitch</code>, <code>HygroThermoSensor</code></p>
+<div class="note">
+<p>短い間隔でAPIを繰り返し呼び出すことは避けてください。
+esp8266はPC等と比べて非常に限られたリソースで動作しています。</p>
+</div>
+<p>WebSocket APIはポート81番に対してwsプロトコルで接続することで利用できます。
+Webブラウザーから利用するには以下のようなコードになるでしょう。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> socket = <span class="hljs-keyword">new</span> WebSocket(<span class="hljs-string">'ws://duino-k.local:81'</span>)
+socket.onmessage = event =&gt; {
+    <span class="hljs-keyword">const</span> data = <span class="hljs-built_in">JSON</span>.parse(event.data)
+    <span class="hljs-keyword">switch</span> (data.event) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"init"</span>:
+            <span class="hljs-built_in">console</span>.log(data)
+            <span class="hljs-keyword">break</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"update"</span>:
+            <span class="hljs-built_in">console</span>.log(data)
+            <span class="hljs-keyword">break</span>
+    }
+}</code></pre>
+<p><strong><code>update</code>イベント</strong></p>
+<p>モジュールの状態に変化があった場合に送出されるメッセージです。</p>
+<pre><code class="language-js">{
+  <span class="hljs-string">"event"</span>: <span class="hljs-string">"update"</span>,
+  <span class="hljs-string">"resource"</span>: <span class="hljs-string">"/sensor/ht"</span>,
+  <span class="hljs-string">"data"</span>: {
+    <span class="hljs-string">"temperature"</span>: <span class="hljs-number">27</span>,
+    <span class="hljs-string">"humidity"</span>: <span class="hljs-number">49</span>
+  }
+}</code></pre>
+<p><strong><code>init</code>イベント</strong></p>
+<p>サーバーとの接続確立時に送出されるメッセージです。
+現在のモジュール状態一覧を取得できます。</p>
+<pre><code class="language-js">{
+  <span class="hljs-string">"event"</span>: <span class="hljs-string">"init"</span>,
+  <span class="hljs-string">"resource"</span>: <span class="hljs-string">"*"</span>,
+  <span class="hljs-string">"items"</span>: [
+    {
+      <span class="hljs-string">"resource"</span>: <span class="hljs-string">"/switch/motion"</span>,
+      <span class="hljs-string">"data"</span>: {
+        <span class="hljs-string">"state"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"updated"</span>: <span class="hljs-number">1527482615</span>
+      }
+    },
+    {
+      <span class="hljs-string">"resource"</span>: <span class="hljs-string">"/sensor/ht"</span>,
+      <span class="hljs-string">"data"</span>: {
+        <span class="hljs-string">"temperature"</span>: <span class="hljs-number">27</span>,
+        <span class="hljs-string">"humidity"</span>: <span class="hljs-number">49</span>
+      }
+    },
+    {
+      <span class="hljs-string">"resource"</span>: <span class="hljs-string">"/sensor/brightness"</span>,
+      <span class="hljs-string">"data"</span>: {
+        <span class="hljs-string">"value"</span>: <span class="hljs-number">478</span>
+      }
+    }
+  ]
+}</code></pre>
+<p>より詳しい使用方法は<a href="https://github.com/yamorijp/duino-klutch-client">duino-klutch-client</a>のソースコードが参考になります。
+この小さなブラウザアプリではWebSocket APIを通じて値の取得を行っています。</p>
+<h2 id="header-ソースコード">ソースコード <a class="permalink" href="#header-ソースコード" aria-hidden="true">¶</a></h2>
+<p><strong>duino-klutch</strong></p>
+<p>esp8266用のWebAPIサーバーです。</p>
+<p><a href="https://github.com/yamorijp/duino-klutch">https://github.com/yamorijp/duino-klutch</a></p>
+<p><strong>duino-klutch-client</strong></p>
+<p>ブラウザ上で動作するクライアントアプリです。</p>
+<p><a href="https://github.com/yamorijp/duino-klutch-client">https://github.com/yamorijp/duino-klutch-client</a></p>
+<p><strong>duino-klutch-demo-server</strong></p>
+<p>APIのスタブを提供するデモ用サーバーです。</p>
+<p><a href="https://github.com/yamorijp/duino-klutch-demo-server">https://github.com/yamorijp/duino-klutch-demo-server</a></p>
+<section id="switch" class="resource-group"><h2 class="group-heading">Switch <a href="#switch" class="permalink">&para;</a></h2><div id="switch-リレースイッチ" class="resource"><h3 class="resource-heading">リレースイッチ <a href="#switch-リレースイッチ" class="permalink">&nbsp;&para;</a></h3><p>リレースイッチを操作します。</p>
+<p>モジュール: <code>handlers/OutputSwitch.h</code></p>
+<div id="switch-リレースイッチ-get" class="action get"><h4 class="action-heading"><div class="name">リレースイッチオン</div><a href="#switch-リレースイッチ-get" class="method get">GET</a><code class="uri">/switch/relay/on</code></h4><p>HIGH信号を送出してスイッチをONにします。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/switch/relay/on</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">state</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">updated</span>": <span class="hljs-value"><span class="hljs-number">1527481037</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">state</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">updated</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="switch-リレースイッチ-get-1" class="action get"><h4 class="action-heading"><div class="name">リレースイッチオフ</div><a href="#switch-リレースイッチ-get-1" class="method get">GET</a><code class="uri">/switch/relay/off</code></h4><p>LOW信号を送出してスイッチをOFFにします。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/switch/relay/off</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">state</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">updated</span>": <span class="hljs-value"><span class="hljs-number">1527481037</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">state</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">updated</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="switch-リレースイッチ-get-2" class="action get"><h4 class="action-heading"><div class="name">リレースイッチトグル</div><a href="#switch-リレースイッチ-get-2" class="method get">GET</a><code class="uri">/switch/relay/toggle</code></h4><p>スイッチの状態を反転します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/switch/relay/toggle</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">state</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">updated</span>": <span class="hljs-value"><span class="hljs-number">1527481037</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">state</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">updated</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="switch-リレースイッチ-get-3" class="action get"><h4 class="action-heading"><div class="name">リレースイッチ状態</div><a href="#switch-リレースイッチ-get-3" class="method get">GET</a><code class="uri">/switch/relay/state</code></h4><p>スイッチ状態を取得します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/switch/relay/state</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">state</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">updated</span>": <span class="hljs-value"><span class="hljs-number">1527481037</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">state</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">updated</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="switch-モーション感知スイッチ" class="resource"><h3 class="resource-heading">モーション感知スイッチ <a href="#switch-モーション感知スイッチ" class="permalink">&nbsp;&para;</a></h3><p>マイクロ波レーダーセンサースイッチモジュール(RGWL-0516)の状態を取得します。</p>
+<p>モジュール: <code>handlers/InputSwitch.h</code></p>
+<div id="switch-モーション感知スイッチ-get" class="action get"><h4 class="action-heading"><div class="name">状態</div><a href="#switch-モーション感知スイッチ-get" class="method get">GET</a><code class="uri">/switch/motion/state</code></h4><p>センサースイッチモジュールのOUT出力を読み取り検出状態を返します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/switch/motion/state</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">state</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">updated</span>": <span class="hljs-value"><span class="hljs-number">1527481037</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">state</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">updated</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="led" class="resource-group"><h2 class="group-heading">LED <a href="#led" class="permalink">&para;</a></h2><div id="led-rgb-led" class="resource"><h3 class="resource-heading">RGB LED <a href="#led-rgb-led" class="permalink">&nbsp;&para;</a></h3><p>RGB LEDを操作します。</p>
+<p>モジュール: <code>handlers/RGBLed.h</code></p>
+<div id="led-rgb-led-get" class="action get"><h4 class="action-heading"><div class="name">点灯</div><a href="#led-rgb-led-get" class="method get">GET</a><code class="uri">/led/rgb/on{?data}</code></h4><p>指定したRGB色でLEDを点灯します。</p>
+<table>
+<thead>
+<tr>
+<th>Color</th>
+<th>Mask</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R</td>
+<td>0xFF0000</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0x00FF00</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0x0000FF</td>
+</tr>
+</tbody>
+</table>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/led/rgb/on?<span class="hljs-attribute">data=</span><span class="hljs-literal">ff013c</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>data</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>ffffff</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>ff013c</span></span><p>HEX指定のRGBカラー</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">red</span>": <span class="hljs-value"><span class="hljs-number">100</span></span>,
+    "<span class="hljs-attribute">green</span>": <span class="hljs-value"><span class="hljs-number">64</span></span>,
+    "<span class="hljs-attribute">blue</span>": <span class="hljs-value"><span class="hljs-number">32</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">red</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">green</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">blue</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="led-rgb-led-get-1" class="action get"><h4 class="action-heading"><div class="name">消灯</div><a href="#led-rgb-led-get-1" class="method get">GET</a><code class="uri">/led/rgb/off</code></h4><p>LEDを消灯します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/led/rgb/off</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">red</span>": <span class="hljs-value"><span class="hljs-number">100</span></span>,
+    "<span class="hljs-attribute">green</span>": <span class="hljs-value"><span class="hljs-number">64</span></span>,
+    "<span class="hljs-attribute">blue</span>": <span class="hljs-value"><span class="hljs-number">32</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">red</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">green</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">blue</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="led-rgb-led-get-2" class="action get"><h4 class="action-heading"><div class="name">状態</div><a href="#led-rgb-led-get-2" class="method get">GET</a><code class="uri">/led/rgb/state</code></h4><p>LEDの点灯状態を取得します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/led/rgb/state</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">red</span>": <span class="hljs-value"><span class="hljs-number">100</span></span>,
+    "<span class="hljs-attribute">green</span>": <span class="hljs-value"><span class="hljs-number">64</span></span>,
+    "<span class="hljs-attribute">blue</span>": <span class="hljs-value"><span class="hljs-number">32</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">red</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">green</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">blue</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="led-4桁7セグメントled" class="resource"><h3 class="resource-heading">4桁7セグメントLED <a href="#led-4桁7セグメントled" class="permalink">&nbsp;&para;</a></h3><p>TM1637を使用した4桁7セグメントディスプレイモジュールを操作します。</p>
+<p>モジュール: <code>handlers/FourDigitLed.h</code></p>
+<div id="led-4桁7セグメントled-get" class="action get"><h4 class="action-heading"><div class="name">ディスプレイ消灯</div><a href="#led-4桁7セグメントled-get" class="method get">GET</a><code class="uri">/led/4digit/clear</code></h4><p>ディスプレイを消灯します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/led/4digit/clear</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="led-4桁7セグメントled-get-1" class="action get"><h4 class="action-heading"><div class="name">数値</div><a href="#led-4桁7セグメントled-get-1" class="method get">GET</a><code class="uri">/led/4digit/number{?data,leading_zero,brightness}</code></h4><p>指定した数値をディスプレイへ表示します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/led/4digit/number?<span class="hljs-attribute">data=</span><span class="hljs-literal">1234</span>&<span class="hljs-attribute">leading_zero=</span><span class="hljs-literal">1</span>&<span class="hljs-attribute">brightness=</span><span class="hljs-literal">7</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>data</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1234</span></span><p>表示する4桁の数値 (0-9999)</p>
+</dd><dt>leading_zero</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>0</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p>不足している桁を0埋めします (0|1)</p>
+</dd><dt>brightness</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>4</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>7</span></span><p>明るさ (1-7)</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="led-4桁7セグメントled-get-2" class="action get"><h4 class="action-heading"><div class="name">セグメント</div><a href="#led-4桁7セグメントled-get-2" class="method get">GET</a><code class="uri">/led/4digit/segments{?data,brightness}</code></h4><p>セグメント単位での指定でLEDを点灯します。
+表示内容はLED点灯状態を表す16進数表記を桁毎に指定します。</p>
+<p>セグメントとビットフラグの対応は以下の通りです。</p>
+<pre><code class="language-no-highlight">---               D:00001000(8)
+|  |     C:00000100(4)  E:00010000(16)
+ ---               G:01000000(64)
+|  |     B:00000010(2)  F:00100000(32)
+ ---               A:00000001(1)</code></pre>
+<div class="note">
+<p>例として数字の&quot; -20&quot;を表示するケースを考えます。
+数字の&quot;2&quot;は以下のセグメントを点灯することで表せます。</p>
+<p><code>D, E, G, B, A</code></p>
+<p>各セグメントに対応するビットを立てた値を合算すると&quot;01011011&quot;が求まります。
+これを16進数表記へ変換すると&quot;5b&quot;となります。</p>
+<p><code>0b00000001 | 0b00000010 | 0b01000000 | 0b00010000 | 0b00001000 = 0b01011011 = 0x5b</code></p>
+<p>数字の&quot;0&quot;は以下のセグメントを点灯させます。</p>
+<p><code>D, E, F, A, B, C</code></p>
+<p>同様にして16進数表記を求めると&quot;3f&quot;となります。</p>
+<p>マイナス記号&quot;-&quot;はSEG7を点灯で&quot;40&quot;となります。
+空白の桁は全てのセグメントを点灯させないません。16進数表記では&quot;00&quot;となります。</p>
+<p>値の指定は右端の桁から行います。
+これらを統合すると&quot; -20&quot;を表示するには&quot;3f5b4000&quot;を指定すれば良いことがわかります。
+また、4桁に満たない場合は&quot;00&quot;が補間されるので&quot; -20&quot;の場合は&quot;3f5b40&quot;とすることも可能です。</p>
+</div>
+<div class="note">
+<p>コロンを点灯させるには2桁目に<code>0b10000000</code>を追加します</p>
+</div>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/led/4digit/segments?<span class="hljs-attribute">data=</span><span class="hljs-literal">ff00ff00ff00ff00</span>&<span class="hljs-attribute">brightness=</span><span class="hljs-literal">7</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>data</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>ff00ff00ff00ff00</span></span><p>桁毎のLED点灯状態を表す16進数表記文字列</p>
+</dd><dt>brightness</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>4</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>7</span></span><p>明るさ (0-7)</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="led-4桁7セグメントled-get-3" class="action get"><h4 class="action-heading"><div class="name">カウントアップ／ダウン</div><a href="#led-4桁7セグメントled-get-3" class="method get">GET</a><code class="uri">/led/4digit/counting{?from,to,step,brightness}</code></h4><p>数値をカウントアップ／ダウンさせながら表示します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/led/4digit/counting?<span class="hljs-attribute">from=</span><span class="hljs-literal">100</span>&<span class="hljs-attribute">to=</span><span class="hljs-literal">9999</span>&<span class="hljs-attribute">step=</span><span class="hljs-literal">10</span>&<span class="hljs-attribute">brightness=</span><span class="hljs-literal">7</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>from</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>0</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>100</span></span><p>開始数値 (0-9999)</p>
+</dd><dt>to</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>0</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>9999</span></span><p>完了数値 (0-9999)</p>
+</dd><dt>step</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>1</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>10</span></span><p>ステップ (1-9999)</p>
+</dd><dt>brightness</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>4</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>7</span></span><p>明るさ (1-7)</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="led-4桁7セグメントled-get-4" class="action get"><h4 class="action-heading"><div class="name">ロール</div><a href="#led-4桁7セグメントled-get-4" class="method get">GET</a><code class="uri">/led/4digit/roll{?min,max,brightness}</code></h4><p>minからmaxの数値をランダムで表示します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/led/4digit/roll?<span class="hljs-attribute">min=</span><span class="hljs-literal">3</span>&<span class="hljs-attribute">max=</span><span class="hljs-literal">15</span>&<span class="hljs-attribute">brightness=</span><span class="hljs-literal">7</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>min</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>0</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>3</span></span><p>最小数値 (0-9999)</p>
+</dd><dt>max</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>9999</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>15</span></span><p>最大数値 (0-9999)</p>
+</dd><dt>brightness</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>4</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>7</span></span><p>明るさ (1-7)</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">roll</span>": <span class="hljs-value"><span class="hljs-number">12</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">roll</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="led-8x8マトリクスled" class="resource"><h3 class="resource-heading">8x8マトリクスLED <a href="#led-8x8マトリクスled" class="permalink">&nbsp;&para;</a></h3><p>MAX7219を使用した8x8マトリクスLEDディスプレイを操作します。</p>
+<p>モジュール: <code>handlers/MatrixLed.h</code></p>
+<div id="led-8x8マトリクスled-get" class="action get"><h4 class="action-heading"><div class="name">マトリクスLED消灯</div><a href="#led-8x8マトリクスled-get" class="method get">GET</a><code class="uri">/led/matrix/clear</code></h4><p>表示中のメッセージをクリアして、ディスプレイを消灯します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/led/matrix/clear</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="led-8x8マトリクスled-get-1" class="action get"><h4 class="action-heading"><div class="name">メッセージ</div><a href="#led-8x8マトリクスled-get-1" class="method get">GET</a><code class="uri">/led/matrix/message{?data,n,instant}</code></h4><p>指定したメッセージをディスプレイへスクロールさせながら表示します。
+instantフラグに<code>1</code>を指定しない場合、メッセージはキューイングされます。</p>
+<div class="warning">
+<p>メッセージはASCII文字のみ対応しています。</p>
+</div>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/led/matrix/message?<span class="hljs-attribute">data=</span><span class="hljs-literal">hello</span>&<span class="hljs-attribute">n=</span><span class="hljs-literal">3</span>&<span class="hljs-attribute">instant=</span><span class="hljs-literal">1</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>data</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>hello</span></span><p>メッセージ</p>
+</dd><dt>n</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>1</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>3</span></span><p>再生回数 (-1=無限再生, -1-100)</p>
+</dd><dt>instant</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>0</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p>キューをクリア (0|1)</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="led-8x8マトリクスled-get-2" class="action get"><h4 class="action-heading"><div class="name">次のメッセージ</div><a href="#led-8x8マトリクスled-get-2" class="method get">GET</a><code class="uri">/led/matrix/next</code></h4><p>キューイングしている次のメッセージを再生します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/led/matrix/next</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="led-8x8マトリクスled-get-3" class="action get"><h4 class="action-heading"><div class="name">列指定</div><a href="#led-8x8マトリクスled-get-3" class="method get">GET</a><code class="uri">/led/matrix/columns{?data}</code></h4><p>LED点灯状態を列単位で指定して点灯させます。</p>
+<div class="note">
+<p>表示内容の指定は点灯LEDに対応するビットを立てた16進数表示を使用します。
+例えば&quot;○&quot;記号を表示する場合は以下のようになります。</p>
+<pre><code class="language-no-highlight">1) 00000000 -> 0x00
+2) 00011000 -> 0x18
+3) 00100100 -> 0x24
+4) 01000010 -> 0x42
+5) 01000010 -> 0x42
+6) 00100100 -> 0x24
+7) 00011000 -> 0x18
+8) 00000000 -> 0x00</code></pre>
+<p>全ての列を結合して&quot;0018244242241800&quot;となります。</p>
+</div>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/led/matrix/columns?<span class="hljs-attribute">data=</span><span class="hljs-literal">FF182442422418FF</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>data</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>FF182442422418FF</span></span><p>点灯LEDに対応するビットを立てた16進数表記文字列</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="sensor" class="resource-group"><h2 class="group-heading">Sensor <a href="#sensor" class="permalink">&para;</a></h2><div id="sensor-湿温度" class="resource"><h3 class="resource-heading">湿温度 <a href="#sensor-湿温度" class="permalink">&nbsp;&para;</a></h3><p>湿温度センサーモジュール(DHT11)から値を読み込みます。</p>
+<p>モジュール: <code>handlers/HygroThermoSensor.h</code></p>
+<div id="sensor-湿温度-get" class="action get"><h4 class="action-heading"><div class="name">温湿度</div><a href="#sensor-湿温度-get" class="method get">GET</a><code class="uri">/sensor/ht</code></h4><p>摂氏温度と湿度を取得します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/sensor/ht</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">temperature</span>": <span class="hljs-value"><span class="hljs-number">27</span></span>,
+    "<span class="hljs-attribute">humidity</span>": <span class="hljs-value"><span class="hljs-number">49</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">temperature</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">humidity</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="sensor-明るさセンサー" class="resource"><h3 class="resource-heading">明るさセンサー <a href="#sensor-明るさセンサー" class="permalink">&nbsp;&para;</a></h3><p>明るさセンサー(CdS)から値を読み込みます。</p>
+<p>モジュール: <code>handlers/AnalogSensor.h</code></p>
+<div id="sensor-明るさセンサー-get" class="action get"><h4 class="action-heading"><div class="name">明るさ</div><a href="#sensor-明るさセンサー-get" class="method get">GET</a><code class="uri">/sensor/brightness</code></h4><p>周辺環境の明るさを取得します。1-1024の範囲で周囲が明るいほど小さな値を示します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/sensor/brightness</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">Value</span></code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="ir" class="resource-group"><h2 class="group-heading">IR <a href="#ir" class="permalink">&para;</a></h2><div id="ir-赤外線送信" class="resource"><h3 class="resource-heading">赤外線送信 <a href="#ir-赤外線送信" class="permalink">&nbsp;&para;</a></h3><p>赤外線送信モジュールを使用してリモコンコードを送信します。</p>
+<p>モジュール: <code>handlers/IRTransmitter.h</code>, <code>handlers/MyHomeIRTransmitter.h</code></p>
+<div id="ir-赤外線送信-get" class="action get"><h4 class="action-heading"><div class="name">Raw</div><a href="#ir-赤外線送信-get" class="method get">GET</a><code class="uri">/ir/transmitter/raw{?data,hz}</code></h4><p>IRrecvでキャプチャしたrawデータを送信します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/ir/transmitter/raw?<span class="hljs-attribute">data=</span><span class="hljs-literal">3298,1748,358,1326,358,484,358,484,358,484,358,484</span>&<span class="hljs-attribute">hz=</span><span class="hljs-literal">38</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>data</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>3298,1748,358,1326,358,484,358,484,358,484,358,484</span></span><p>カンマ区切りの数値</p>
+</dd><dt>hz</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>32</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>38</span></span><p>送信周波数</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="ir-赤外線送信-get-1" class="action get"><h4 class="action-heading"><div class="name">送信</div><a href="#ir-赤外線送信-get-1" class="method get">GET</a><code class="uri">/ir/transmitter/send{?type,data,bits}</code></h4><p>リモコンコードを送信します。</p>
+<h4 id="header-タイプの一覧">タイプの一覧 <a class="permalink" href="#header-タイプの一覧" aria-hidden="true">¶</a></h4>
+<table>
+<thead>
+<tr>
+<th>メーカー</th>
+<th>番号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RC5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>RC6</td>
+<td>2</td>
+</tr>
+<tr>
+<td>NEC</td>
+<td>3</td>
+</tr>
+<tr>
+<td>SONY</td>
+<td>4</td>
+</tr>
+<tr>
+<td>PANASONIC</td>
+<td>5</td>
+</tr>
+<tr>
+<td>JVC</td>
+<td>6</td>
+</tr>
+<tr>
+<td>SAMSUNG</td>
+<td>7</td>
+</tr>
+<tr>
+<td>WHYNTER</td>
+<td>8</td>
+</tr>
+<tr>
+<td>AIWA_RC_T501</td>
+<td>9</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>10</td>
+</tr>
+<tr>
+<td>SANYO</td>
+<td>11</td>
+</tr>
+<tr>
+<td>MITSUBISHI</td>
+<td>12</td>
+</tr>
+<tr>
+<td>DISH</td>
+<td>13</td>
+</tr>
+<tr>
+<td>SHARP</td>
+<td>14</td>
+</tr>
+<tr>
+<td>COOLIX</td>
+<td>15</td>
+</tr>
+<tr>
+<td>DAIKIN</td>
+<td>16</td>
+</tr>
+<tr>
+<td>DENON</td>
+<td>17</td>
+</tr>
+<tr>
+<td>KELVINATOR</td>
+<td>18</td>
+</tr>
+<tr>
+<td>SHERWOOD</td>
+<td>19</td>
+</tr>
+<tr>
+<td>MITSUBISHI_AC</td>
+<td>20</td>
+</tr>
+<tr>
+<td>RCMM</td>
+<td>21</td>
+</tr>
+<tr>
+<td>SANYO_LC7461</td>
+<td>22</td>
+</tr>
+<tr>
+<td>RC5X</td>
+<td>23</td>
+</tr>
+<tr>
+<td>GREE</td>
+<td>24</td>
+</tr>
+<tr>
+<td>PRONTO</td>
+<td>25</td>
+</tr>
+<tr>
+<td>NEC_LIKE</td>
+<td>26</td>
+</tr>
+<tr>
+<td>ARGO</td>
+<td>27</td>
+</tr>
+<tr>
+<td>TROTEC</td>
+<td>28</td>
+</tr>
+<tr>
+<td>NIKAI</td>
+<td>29</td>
+</tr>
+<tr>
+<td>RAW</td>
+<td>30</td>
+</tr>
+<tr>
+<td>GLOBALCACHE</td>
+<td>31</td>
+</tr>
+<tr>
+<td>TOSHIBA_AC</td>
+<td>32</td>
+</tr>
+<tr>
+<td>FUJITSU_AC</td>
+<td>33</td>
+</tr>
+<tr>
+<td>MIDEA</td>
+<td>34</td>
+</tr>
+<tr>
+<td>MAGIQUEST</td>
+<td>35</td>
+</tr>
+<tr>
+<td>LASERTAG</td>
+<td>36</td>
+</tr>
+<tr>
+<td>CARRIER_AC</td>
+<td>37</td>
+</tr>
+<tr>
+<td>HAIER_AC</td>
+<td>38</td>
+</tr>
+<tr>
+<td>MITSUBISHI2</td>
+<td>39</td>
+</tr>
+<tr>
+<td>HITACHI_AC</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+<div class="note">
+<p>NECフォーマット32bitsで&quot;0xFFE01FUL&quot;を送信する例：</p>
+<pre><code class="language-no-highlight">/ir/transmitter/raw?type=3&data=ffe01f&bits=32</code></pre>
+</div>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/ir/transmitter/send?<span class="hljs-attribute">type=</span><span class="hljs-literal">3</span>&<span class="hljs-attribute">data=</span><span class="hljs-literal">ffe01f</span>&<span class="hljs-attribute">bits=</span><span class="hljs-literal">32</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>data</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>ffe01f</span></span><p>送信コードを16進数表記で指定します</p>
+</dd><dt>type</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>3</span></span><p>フォーマットを指定します (1-40)</p>
+</dd><dt>bits</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>32</span></span><p>ビット数を指定します (1-)</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="ir-赤外線送信-get-2" class="action get"><h4 class="action-heading"><div class="name">コマンド</div><a href="#ir-赤外線送信-get-2" class="method get">GET</a><code class="uri">/ir/transmitter/command{?data}</code></h4><p>定義済みのリモコンコマンドを送出します。
+拡張赤外線通信モジュールを使用している場合のみ使用できます。</p>
+<h4 id="header-リモコンコマンド一覧">リモコンコマンド一覧 <a class="permalink" href="#header-リモコンコマンド一覧" aria-hidden="true">¶</a></h4>
+<table>
+<thead>
+<tr>
+<th>コマンド名</th>
+<th>概要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>koizumi_cl_off</td>
+<td>照明をOFF</td>
+</tr>
+<tr>
+<td>koizumi_cl_hi</td>
+<td>照明を全灯モードでON</td>
+</tr>
+<tr>
+<td>koizumi_cl_med</td>
+<td>照明を調灯モードでON</td>
+</tr>
+<tr>
+<td>koizumi_cl_low</td>
+<td>照明を豆球モードでON</td>
+</tr>
+<tr>
+<td>hitachi_ac_off</td>
+<td>エアコンをOFF</td>
+</tr>
+<tr>
+<td>hitachi_ac_heat</td>
+<td>エアコンを暖房モードでON</td>
+</tr>
+<tr>
+<td>hitachi_ac_cool</td>
+<td>エアコンを冷房モードでOFF</td>
+</tr>
+</tbody>
+</table>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/ir/transmitter/command?<span class="hljs-attribute">data=</span><span class="hljs-literal">koizumi_cl_off</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>data</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>koizumi_cl_off</span></span><p>コマンド名を指定します</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="others" class="resource-group"><h2 class="group-heading">Others <a href="#others" class="permalink">&para;</a></h2><div id="others-その他" class="resource"><h3 class="resource-heading">その他 <a href="#others-その他" class="permalink">&nbsp;&para;</a></h3><p>デバイス操作を提供します。</p>
+<p>モジュール: <code>handlers/Site.h</code>, <code>handlers/HandlerCOntainer.h</code></p>
+<div id="others-その他-get" class="action get"><h4 class="action-heading"><div class="name">リセット</div><a href="#others-その他-get" class="method get">GET</a><code class="uri">/reset</code></h4><p>デバイスをリセットします。</p>
+<div class="note">
+<p>ESP.reset() is a hard reset and can leave some of the registers in the old state
+which can lead to problems, its more or less like the reset button on the PC.</p>
+</div>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/reset</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="others-その他-get-1" class="action get"><h4 class="action-heading"><div class="name">再起動</div><a href="#others-その他-get-1" class="method get">GET</a><code class="uri">/restart</code></h4><p>デバイスを再起動します。</p>
+<div class="note">
+<p>ESP.restart() tells the SDK to reboot, so its a more clean reboot,
+use this one if possible.</p>
+</div>
+<div class="warning">
+<p>the boot mode:(1,7) problem is known and only happens at the first restart after serial flashing.
+if you do one manual reboot by power or RST pin all will work more info
+see: <a href="https://github.com/esp8266/Arduino/issues/1017">#1017</a></p>
+</div>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/restart</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="others-その他-get-2" class="action get"><h4 class="action-heading"><div class="name">ヒープメモリ</div><a href="#others-その他-get-2" class="method get">GET</a><code class="uri">/heap</code></h4><p>デバイスのメモリー状況を取得します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/heap</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">vcc</span>": <span class="hljs-value"><span class="hljs-number">65535</span></span>,
+    "<span class="hljs-attribute">free_heap</span>": <span class="hljs-value"><span class="hljs-number">33000</span></span>,
+    "<span class="hljs-attribute">free_sketch_space</span>": <span class="hljs-value"><span class="hljs-number">2818948</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">vcc</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">free_heap</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">free_sketch_space</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="others-その他-get-3" class="action get"><h4 class="action-heading"><div class="name">モジュール情報</div><a href="#others-その他-get-3" class="method get">GET</a><code class="uri">/_handlers</code></h4><p>有効なハンドラーモジュールの一覧を取得します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://duino-k.local</span>/_handlers</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Temperature &amp; Humidity"</span></span>,
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"HygroThermoSensor"</span></span>,
+        "<span class="hljs-attribute">group</span>": <span class="hljs-value"><span class="hljs-string">"sensor"</span></span>,
+        "<span class="hljs-attribute">resource</span>": <span class="hljs-value"><span class="hljs-string">"/sensor/ht"</span>
+      </span>}
+    ]
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 30 May 2018</p><script>/* eslint-env browser */
+/* eslint quotes: [2, "single"] */
+'use strict';
+
+/*
+  Determine if a string ends with another string.
+*/
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+
+/*
+  Get a list of direct child elements by class name.
+*/
+function childrenByClass(element, name) {
+  var filtered = [];
+
+  for (var i = 0; i < element.children.length; i++) {
+    var child = element.children[i];
+    var classNames = child.className.split(' ');
+    if (classNames.indexOf(name) !== -1) {
+      filtered.push(child);
+    }
+  }
+
+  return filtered;
+}
+
+/*
+  Get an array [width, height] of the window.
+*/
+function getWindowDimensions() {
+  var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.body,
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+  return [x, y];
+}
+
+/*
+  Collapse or show a request/response example.
+*/
+function toggleCollapseButton(event) {
+    var button = event.target.parentNode;
+    var content = button.parentNode.nextSibling;
+    var inner = content.children[0];
+
+    if (button.className.indexOf('collapse-button') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+        // Currently showing, so let's hide it
+        button.className = 'collapse-button';
+        content.style.maxHeight = '0px';
+    } else {
+        // Currently hidden, so let's show it
+        button.className = 'collapse-button show';
+        content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+function toggleTabButton(event) {
+    var i, index;
+    var button = event.target;
+
+    // Get index of the current button.
+    var buttons = childrenByClass(button.parentNode, 'tab-button');
+    for (i = 0; i < buttons.length; i++) {
+        if (buttons[i] === button) {
+            index = i;
+            button.className = 'tab-button active';
+        } else {
+            buttons[i].className = 'tab-button';
+        }
+    }
+
+    // Hide other tabs and show this one.
+    var tabs = childrenByClass(button.parentNode.parentNode, 'tab');
+    for (i = 0; i < tabs.length; i++) {
+        if (i === index) {
+            tabs[i].style.display = 'block';
+        } else {
+            tabs[i].style.display = 'none';
+        }
+    }
+}
+
+/*
+  Collapse or show a navigation menu. It will not be hidden unless it
+  is currently selected or `force` has been passed.
+*/
+function toggleCollapseNav(event, force) {
+    var heading = event.target.parentNode;
+    var content = heading.nextSibling;
+    var inner = content.children[0];
+
+    if (heading.className.indexOf('heading') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+      // Currently showing, so let's hide it, but only if this nav item
+      // is already selected. This prevents newly selected items from
+      // collapsing in an annoying fashion.
+      if (force || window.location.hash && endsWith(event.target.href, window.location.hash)) {
+        content.style.maxHeight = '0px';
+      }
+    } else {
+      // Currently hidden, so let's show it
+      content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+/*
+  Refresh the page after a live update from the server. This only
+  works in live preview mode (using the `--server` parameter).
+*/
+function refresh(body) {
+    document.querySelector('body').className = 'preload';
+    document.body.innerHTML = body;
+
+    // Re-initialize the page
+    init();
+    autoCollapse();
+
+    document.querySelector('body').className = '';
+}
+
+/*
+  Determine which navigation items should be auto-collapsed to show as many
+  as possible on the screen, based on the current window height. This also
+  collapses them.
+*/
+function autoCollapse() {
+  var windowHeight = getWindowDimensions()[1];
+  var itemsHeight = 64; /* Account for some padding */
+  var itemsArray = Array.prototype.slice.call(
+    document.querySelectorAll('nav .resource-group .heading'));
+
+  // Get the total height of the navigation items
+  itemsArray.forEach(function (item) {
+    itemsHeight += item.parentNode.offsetHeight;
+  });
+
+  // Should we auto-collapse any nav items? Try to find the smallest item
+  // that can be collapsed to show all items on the screen. If not possible,
+  // then collapse the largest item and do it again. First, sort the items
+  // by height from smallest to largest.
+  var sortedItems = itemsArray.sort(function (a, b) {
+    return a.parentNode.offsetHeight - b.parentNode.offsetHeight;
+  });
+
+  while (sortedItems.length && itemsHeight > windowHeight) {
+    for (var i = 0; i < sortedItems.length; i++) {
+      // Will collapsing this item help?
+      var itemHeight = sortedItems[i].nextSibling.offsetHeight;
+      if ((itemsHeight - itemHeight <= windowHeight) || i === sortedItems.length - 1) {
+        // It will, so let's collapse it, remove its content height from
+        // our total and then remove it from our list of candidates
+        // that can be collapsed.
+        itemsHeight -= itemHeight;
+        toggleCollapseNav({target: sortedItems[i].children[0]}, true);
+        sortedItems.splice(i, 1);
+        break;
+      }
+    }
+  }
+}
+
+/*
+  Initialize the interactive functionality of the page.
+*/
+function init() {
+    var i, j;
+
+    // Make collapse buttons clickable
+    var buttons = document.querySelectorAll('.collapse-button');
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = toggleCollapseButton;
+
+        // Show by default? Then toggle now.
+        if (buttons[i].className.indexOf('show') !== -1) {
+            toggleCollapseButton({target: buttons[i].children[0]});
+        }
+    }
+
+    var responseCodes = document.querySelectorAll('.example-names');
+    for (i = 0; i < responseCodes.length; i++) {
+        var tabButtons = childrenByClass(responseCodes[i], 'tab-button');
+        for (j = 0; j < tabButtons.length; j++) {
+            tabButtons[j].onclick = toggleTabButton;
+
+            // Show by default?
+            if (j === 0) {
+                toggleTabButton({target: tabButtons[j]});
+            }
+        }
+    }
+
+    // Make nav items clickable to collapse/expand their content.
+    var navItems = document.querySelectorAll('nav .resource-group .heading');
+    for (i = 0; i < navItems.length; i++) {
+        navItems[i].onclick = toggleCollapseNav;
+
+        // Show all by default
+        toggleCollapseNav({target: navItems[i].children[0]});
+    }
+}
+
+// Initial call to set up buttons
+init();
+
+window.onload = function () {
+    autoCollapse();
+    // Remove the `preload` class to enable animations
+    document.querySelector('body').className = '';
+};
+</script></body></html>

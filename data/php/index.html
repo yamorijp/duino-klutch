@@ -1,0 +1,1739 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Source+Code+Pro"><style type="text/css">* {
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+h2 {
+	font-size: 24px;
+    font-weight: 400;
+    padding: 10px 0px;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    font-family: 'Open Sans', sans-serif;
+    cursor: default;
+    transition: linear left 0.1s;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 14px;
+    color: #272b2d;
+}
+
+mark {
+    background: transparent;
+    border-radius: 3px;
+    color: yellow;
+}
+
+.top-element {
+	height: 0px;
+	width: 100%;
+	background: transparent;
+	margin-top: 1px;
+}
+
+.top-header {
+	position: absolute;
+    top: 0;
+    left: 270px;
+    right: 0;
+    z-index: 100;
+    height: 50px;
+    background: transparent;
+    overflow: hidden;
+}
+
+.part-header{
+	width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.headers-available .documentation {
+	display: inline-block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    top: 50px;
+}
+.headers-available .custom-header {
+	display: inline-block;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    height: 50px;
+    z-index: 5000;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+
+.lang-header {
+	padding: 10px 15px;
+    position: absolute;
+    left: 50%;
+    right: 0;
+	box-shadow: 0 0 1px 0;
+	background: #2D3134;
+}
+
+.lang-header .lan{
+	padding: 3px 12px;
+    margin-right: 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid #272b2d;
+    color: #dde4e8;
+}
+
+.lan.selected {
+	background: #272b2d;
+    color: #45f945;
+    font-weight: 600;
+}
+.sidebar {
+	font-family: 'Open Sans', sans-serif;
+	bottom: 0;
+	font-weight: 400;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 75;
+    width: 230px;
+	padding: 20px;
+	padding-top: 45px;
+	background: #fafafa;
+}
+ 
+.sidebar .group-header {
+	color: rgb(82, 98, 105);
+	font-weight: 600;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+
+.sidebar li.resource-header.expand .resource-nav-item {
+	font-weight: 600;
+}
+
+.sidebar a.child-nav-item.selected {
+	color: #0095dd;
+}
+
+.sidebar a.child-nav-item:hover {
+	color: #0095dd;
+}
+
+.sidebar li.transition {
+	padding-left: 20px;
+}
+
+.sidebar .resource-header > ul{
+	display: none;
+}
+
+.sidebar .resource-header.expand > ul{
+	display: block;
+}
+
+
+.container {
+	bottom: 0;
+    right: 0;
+    position: absolute;
+    top: 0;
+    left: 270px;
+    z-index: 50;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.doc-body {
+	box-sizing: border-box;
+    background-image: -webkit-linear-gradient(-90deg, #2D3134 50%, #ffffff 50%);
+    background-image: linear-gradient(-90deg, #2D3134 50%, #ffffff 50%);
+}
+
+.header-anchor {
+	visibility: hidden;
+}
+
+.col-12 {
+	width: 100%;
+}
+
+.col-6 {
+	width: 50%;
+}
+
+.row {
+	padding-bottom: 50px;
+}
+
+.row:after {
+	clear: both;
+    content: '';
+    display: table;
+}
+
+.lhs, .rhs {
+    float: left;
+    box-sizing: border-box;
+}
+
+.lhs {
+	padding: 0 20px;
+}
+
+.rhs {
+    padding-top: 40px;
+    color: #dde4e8;
+}
+
+code, .code {
+	font-family: Source Code Pro,Menlo,monospace;
+	font-size: 13px;
+}
+
+
+.doc-body .group-heading {
+	font-size: 24px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    padding: 10px 0;
+    margin: 20px 0;
+}
+
+.doc-body .resource-heading {
+	padding: 10px 0px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.doc-body .transition-heading {
+    color: #292e31;
+    padding: 10px 0px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px
+}
+
+ul.attrs, ul.params {
+	border-top: 1px solid #e1e8ed;
+}
+
+.params .left, .attrs .left, .params .right, .attrs .right {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}
+
+.params .left, .attrs .left {
+	text-align: right;
+    padding-right: 20px;
+    box-sizing: border-box;
+    font-size: 13px;
+    line-height: 21px;
+    word-break: break-all;
+    white-space: normal;
+}
+
+.params .right, .attrs .right {
+	box-sizing: border-box;
+	padding-left: 10px;
+}
+
+li.param, li.attr {
+	padding: 17px 0;
+    border-bottom: 1px solid #f0f4f7;
+    line-height: 24px;
+}
+
+li.param:last-child, li.attr:last-child {
+	border-bottom: none;	
+}
+
+.left {
+	color: #aaa;
+}
+
+.left span {
+	padding-right: 10px;
+}
+
+.left .key {
+    color: #000;
+}
+
+.left span.key{
+	font-weight: 600;
+}
+
+.left .type {
+	font-style: italic;
+	font-size: 12px;
+}
+
+.left .example, .left .default {
+	font-size: 11px;
+}
+
+.left .required, .left .optional {
+	color: #e66e33;
+	text-transform: uppercase;
+	font-size: 10px;
+    font-weight: 600;
+}
+.show-child-attr {
+	color: #0095dd;
+	padding: 6px 0;
+}
+
+.child-attr {
+	border-radius: 5px;
+}
+
+.child-attr > .attrs {
+	display: none;
+}
+
+.child-attr > .show-child-attr > .expand {
+	display: block;
+	cursor: pointer;
+}
+.child-attr > .show-child-attr > .close {
+	display: none;
+	cursor: pointer;
+}
+
+.child-attr.show {
+	box-shadow: 0 0 1px 0px rgba(128, 128, 128, 0.5);
+}
+
+.child-attr.show > .attrs{
+	display: block;
+}
+.child-attr.show > .show-child-attr > .expand {
+	display: none;
+}
+.child-attr.show > .show-child-attr > .close {
+	display: block;
+}
+
+.part-heading {
+	color: #939da3;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    text-transform: uppercase;
+    margin: 15px 0;
+}
+
+
+.api-definition-heading, .rhs-heading {
+	margin-bottom: 15px;
+    font-weight: 600;
+    padding: 6px 20px;
+    font-size: 13px;
+}
+
+.api-method {
+    padding: 2px 11px;
+    border-radius: 2px;
+    color: white;
+}
+
+.api-method.get {
+	color: #1fda9a;
+}
+
+.api-method.post {
+	color: #ee4b3e;
+}
+
+.api-method.put {
+	color: #E9BC1B;
+}
+
+.api-url {
+	word-break: break-all;
+    white-space: initial;
+    line-height: 1.9;
+}
+
+.rhs-highlight {
+    padding: 0 20px;
+    margin: 20px;
+    padding: 20px 20px;
+    background: #272b2d;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 70px;
+}
+
+.headers-description {
+	margin-bottom: 50px;
+}
+
+.hljs {
+    border-radius: 2px;
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.hljs-keyword {
+	font-weight: 600;
+}
+
+.hljs-built_in {
+	color: #0095dd;
+}
+
+.hljs-attr {
+	color: #4aba09;
+}
+
+.note, .warning {
+	padding: .3em 1em;
+	margin: 1em 0;
+	font-size: 90%;
+}
+
+.note {
+	color: #000;
+	background-color: #f0f6fb;
+	border-left: 4px solid #428bca;
+}
+
+.warning {
+	color: #000;
+	background-color: #fbf1f0;
+	border-left: 4px solid #c9302c;
+}
+
+
+.group-header a, .doc-body a {
+  color: #53727d;
+}
+
+code.language-no-highlight {
+  padding: 1em;
+  margin: 1em 0;
+  font-size: 90%;
+  background-color: #f5f5f5;
+  border: 1px solid #eeeeee;
+  display: block;
+}
+
+.resource-header {
+  font-size: 90%;
+}
+</style><title>Duino Klutch API</title></head><body class="headers-available"><div class="custom-header"><div style="padding: 8px 20px;font-size: 22px;">
+	<span style="font-weight:800; color:#000">duino </span>
+	<span style="font-weight:200; color:#555">klutch</span>
+</div>
+</div><div class="documentation"><div class="top-header"><div class="lang-header part-header"><span class="lan" lang="curl">curl</span><span class="lan" lang="node">Node</span><span class="lan" lang="python">Python</span><span class="lan" lang="java">Java</span><span class="lan" lang="ruby">Ruby</span><span class="lan selected" lang="php">php</span><span class="lan" lang="go">Go</span></div></div><div class="sidebar"><nav class="sidebar-nav"><!--.group-header//a(href='#top', _href='#top') Overview--><ul><li class="resource-header"><a class="resource-nav-item" href="#group-overview" _href="#group-overview">Overview</a></li><li class="resource-header"><a class="resource-nav-item" href="#websocket" _href="#websocket">Websocket</a></li><li class="resource-header"><a class="resource-nav-item" href="#" _href="#"></a></li></ul><div class="group-header"><a href="#group-switch" _href="#group-switch">Switch</a></div><ul><li class="resource-header"><a class="resource-nav-item" href="#resource-%E3%83%AA%E3%83%AC%E3%83%BC%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81" _href="#resource-%E3%83%AA%E3%83%AC%E3%83%BC%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81">リレースイッチ</a><ul><li class="transition"><a class="child-nav-item" href="#transition-%E3%82%AA%E3%83%B3-get" _href="#transition-%E3%82%AA%E3%83%B3-get"><span class="child-nav-text">オン</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E3%82%AA%E3%83%95-get" _href="#transition-%E3%82%AA%E3%83%95-get"><span class="child-nav-text">オフ</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E3%83%88%E3%82%B0%E3%83%AB-get" _href="#transition-%E3%83%88%E3%82%B0%E3%83%AB-get"><span class="child-nav-text">トグル</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81%E7%8A%B6%E6%85%8B-get" _href="#transition-%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81%E7%8A%B6%E6%85%8B-get"><span class="child-nav-text">スイッチ状態</span></a></li></ul></li><li class="resource-header"><a class="resource-nav-item" href="#resource-%E3%83%A2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E6%84%9F%E7%9F%A5%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81" _href="#resource-%E3%83%A2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E6%84%9F%E7%9F%A5%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81">モーション感知スイッチ</a><ul><li class="transition"><a class="child-nav-item" href="#transition-%E6%84%9F%E7%9F%A5%E7%8A%B6%E6%85%8B-get" _href="#transition-%E6%84%9F%E7%9F%A5%E7%8A%B6%E6%85%8B-get"><span class="child-nav-text">感知状態</span></a></li></ul></li></ul><div class="group-header"><a href="#group-led" _href="#group-led">LED</a></div><ul><li class="resource-header"><a class="resource-nav-item" href="#resource-rgb-led" _href="#resource-rgb-led">RGB LED</a><ul><li class="transition"><a class="child-nav-item" href="#transition-%E7%82%B9%E7%81%AF-get" _href="#transition-%E7%82%B9%E7%81%AF-get"><span class="child-nav-text">点灯</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E6%B6%88%E7%81%AF-get" _href="#transition-%E6%B6%88%E7%81%AF-get"><span class="child-nav-text">消灯</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E7%82%B9%E7%81%AF%E7%8A%B6%E6%B3%81-get" _href="#transition-%E7%82%B9%E7%81%AF%E7%8A%B6%E6%B3%81-get"><span class="child-nav-text">点灯状況</span></a></li></ul></li><li class="resource-header"><a class="resource-nav-item" href="#resource-4%E6%A1%817%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88led" _href="#resource-4%E6%A1%817%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88led">4桁7セグメントLED</a><ul><li class="transition"><a class="child-nav-item" href="#transition-%E3%83%87%E3%82%A3%E3%82%B9%E3%83%97%E3%83%AC%E3%82%A4%E6%B6%88%E7%81%AF-get" _href="#transition-%E3%83%87%E3%82%A3%E3%82%B9%E3%83%97%E3%83%AC%E3%82%A4%E6%B6%88%E7%81%AF-get"><span class="child-nav-text">ディスプレイ消灯</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E6%95%B0%E5%80%A4-get" _href="#transition-%E6%95%B0%E5%80%A4-get"><span class="child-nav-text">数値</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88-get" _href="#transition-%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88-get"><span class="child-nav-text">セグメント</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%EF%BC%8F%E3%83%80%E3%82%A6%E3%83%B3-get" _href="#transition-%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%EF%BC%8F%E3%83%80%E3%82%A6%E3%83%B3-get"><span class="child-nav-text">カウントアップ／ダウン</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E3%83%AD%E3%83%BC%E3%83%AB-get" _href="#transition-%E3%83%AD%E3%83%BC%E3%83%AB-get"><span class="child-nav-text">ロール</span></a></li></ul></li><li class="resource-header"><a class="resource-nav-item" href="#resource-8x8%E3%83%9E%E3%83%88%E3%83%AA%E3%82%AF%E3%82%B9led" _href="#resource-8x8%E3%83%9E%E3%83%88%E3%83%AA%E3%82%AF%E3%82%B9led">8x8マトリクスLED</a><ul><li class="transition"><a class="child-nav-item" href="#transition-%E3%83%9E%E3%83%88%E3%83%AA%E3%82%AF%E3%82%B9led%E6%B6%88%E7%81%AF-get" _href="#transition-%E3%83%9E%E3%83%88%E3%83%AA%E3%82%AF%E3%82%B9led%E6%B6%88%E7%81%AF-get"><span class="child-nav-text">マトリクスLED消灯</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8-get" _href="#transition-%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8-get"><span class="child-nav-text">メッセージ</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E6%AC%A1%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8-get" _href="#transition-%E6%AC%A1%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8-get"><span class="child-nav-text">次のメッセージ</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E5%88%97%E6%8C%87%E5%AE%9A-get" _href="#transition-%E5%88%97%E6%8C%87%E5%AE%9A-get"><span class="child-nav-text">列指定</span></a></li></ul></li></ul><div class="group-header"><a href="#group-sensor" _href="#group-sensor">Sensor</a></div><ul><li class="resource-header"><a class="resource-nav-item" href="#resource-%E6%B9%BF%E6%B8%A9%E5%BA%A6" _href="#resource-%E6%B9%BF%E6%B8%A9%E5%BA%A6">湿温度</a><ul><li class="transition"><a class="child-nav-item" href="#transition-%E6%B8%A9%E6%B9%BF%E5%BA%A6-get" _href="#transition-%E6%B8%A9%E6%B9%BF%E5%BA%A6-get"><span class="child-nav-text">温湿度</span></a></li></ul></li><li class="resource-header"><a class="resource-nav-item" href="#resource-%E6%98%8E%E3%82%8B%E3%81%95%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC" _href="#resource-%E6%98%8E%E3%82%8B%E3%81%95%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC">明るさセンサー</a><ul><li class="transition"><a class="child-nav-item" href="#transition-%E6%98%8E%E3%82%8B%E3%81%95-get" _href="#transition-%E6%98%8E%E3%82%8B%E3%81%95-get"><span class="child-nav-text">明るさ</span></a></li></ul></li></ul><div class="group-header"><a href="#group-ir" _href="#group-ir">IR</a></div><ul><li class="resource-header"><a class="resource-nav-item" href="#resource-%E8%B5%A4%E5%A4%96%E7%B7%9A%E9%80%81%E4%BF%A1" _href="#resource-%E8%B5%A4%E5%A4%96%E7%B7%9A%E9%80%81%E4%BF%A1">赤外線送信</a><ul><li class="transition"><a class="child-nav-item" href="#transition-raw-get" _href="#transition-raw-get"><span class="child-nav-text">Raw</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E9%80%81%E4%BF%A1-get" _href="#transition-%E9%80%81%E4%BF%A1-get"><span class="child-nav-text">送信</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89-get" _href="#transition-%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89-get"><span class="child-nav-text">コマンド</span></a></li></ul></li></ul><div class="group-header"><a href="#group-others" _href="#group-others">Others</a></div><ul><li class="resource-header"><a class="resource-nav-item" href="#resource-%E3%81%9D%E3%81%AE%E4%BB%96" _href="#resource-%E3%81%9D%E3%81%AE%E4%BB%96">その他</a><ul><li class="transition"><a class="child-nav-item" href="#transition-%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88-get" _href="#transition-%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88-get"><span class="child-nav-text">リセット</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E5%86%8D%E8%B5%B7%E5%8B%95-get" _href="#transition-%E5%86%8D%E8%B5%B7%E5%8B%95-get"><span class="child-nav-text">再起動</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E3%83%92%E3%83%BC%E3%83%97%E3%83%A1%E3%83%A2%E3%83%AA-get" _href="#transition-%E3%83%92%E3%83%BC%E3%83%97%E3%83%A1%E3%83%A2%E3%83%AA-get"><span class="child-nav-text">ヒープメモリ</span></a></li><li class="transition"><a class="child-nav-item" href="#transition-%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E6%83%85%E5%A0%B1-get" _href="#transition-%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E6%83%85%E5%A0%B1-get"><span class="child-nav-text">モジュール情報</span></a></li></ul></li></ul></nav></div><div class="container"><div class="doc-body col-12"><div class="row"><div class="col-6 lhs"><div class="group-heading top" id="group-overview">Overview</div><div class="description"><p>接続モジュールのセンサー値取得や制御を行うWebAPIです。</p>
+<p>レスポンス仕様は<a href="https://labs.omniti.com/labs/jsend">Jsend</a>に準拠しています。</p>
+<div class="note">
+<p>当ドキュメントに記載の場合でも、実際に使用可能なエンドポイントはビルド構成によって異なります。</p>
+</div>
+<h2 id="websocket">WebSocket <a class="header-anchor" href="#websocket" aria-hidden="true">¶</a></h2>
+<p>一部のモジュールはWebSocketを通じて状態の変化を受信できます。</p>
+<p>対応モジュール: <code>AnalogSensor</code>, <code>InputSwitch</code>, <code>OutputSwitch</code>, <code>HygroThermoSensor</code></p>
+<div class="note">
+<p>短い間隔でAPIを繰り返し呼び出すことは避けてください。
+esp8266はPC等と比べて非常に限られたリソースで動作しています。</p>
+</div>
+<p>WebSocket APIはポート81番に対してwsプロトコルで接続することで利用できます。
+Webブラウザーから利用するには以下のようなコードになるでしょう。</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> socket = <span class="hljs-keyword">new</span> WebSocket(<span class="hljs-string">'ws://duino-k.local:81'</span>)
+socket.onmessage = <span class="hljs-function"><span class="hljs-params">event</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> data = <span class="hljs-built_in">JSON</span>.parse(event.data)
+    <span class="hljs-keyword">switch</span> (data.event) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"init"</span>:
+            <span class="hljs-built_in">console</span>.log(data)
+            <span class="hljs-keyword">break</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"update"</span>:
+            <span class="hljs-built_in">console</span>.log(data)
+            <span class="hljs-keyword">break</span>
+    }
+}
+</code></pre>
+<p><strong><code>update</code>イベント</strong></p>
+<p>モジュールの状態に変化があった場合に送出されるメッセージです。</p>
+<pre><code class="language-js">{
+  <span class="hljs-string">"event"</span>: <span class="hljs-string">"update"</span>,
+  <span class="hljs-string">"resource"</span>: <span class="hljs-string">"/sensor/ht"</span>,
+  <span class="hljs-string">"data"</span>: {
+    <span class="hljs-string">"temperature"</span>: <span class="hljs-number">27</span>,
+    <span class="hljs-string">"humidity"</span>: <span class="hljs-number">49</span>
+  }
+}
+</code></pre>
+<p><strong><code>init</code>イベント</strong></p>
+<p>サーバーとの接続確立時に送出されるメッセージです。
+現在のモジュール状態一覧を取得できます。</p>
+<pre><code class="language-js">{
+  <span class="hljs-string">"event"</span>: <span class="hljs-string">"init"</span>,
+  <span class="hljs-string">"resource"</span>: <span class="hljs-string">"*"</span>,
+  <span class="hljs-string">"items"</span>: [
+    {
+      <span class="hljs-string">"resource"</span>: <span class="hljs-string">"/switch/motion"</span>,
+      <span class="hljs-string">"data"</span>: {
+        <span class="hljs-string">"state"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"updated"</span>: <span class="hljs-number">1527482615</span>
+      }
+    },
+    {
+      <span class="hljs-string">"resource"</span>: <span class="hljs-string">"/sensor/ht"</span>,
+      <span class="hljs-string">"data"</span>: {
+        <span class="hljs-string">"temperature"</span>: <span class="hljs-number">27</span>,
+        <span class="hljs-string">"humidity"</span>: <span class="hljs-number">49</span>
+      }
+    },
+    {
+      <span class="hljs-string">"resource"</span>: <span class="hljs-string">"/sensor/brightness"</span>,
+      <span class="hljs-string">"data"</span>: {
+        <span class="hljs-string">"value"</span>: <span class="hljs-number">478</span>
+      }
+    }
+  ]
+}
+</code></pre>
+<p>より詳しい使用方法は<a href="https://github.com/yamorijp/duino-klutch-client">duino-klutch-client</a>のソースコードが参考になります。
+この小さなブラウザアプリではWebSocket APIを通じて値の取得を行っています。</p>
+<h2 id="">ソースコード <a class="header-anchor" href="#" aria-hidden="true">¶</a></h2>
+<p><strong>duino-klutch</strong></p>
+<p>esp8266用のWebAPIサーバーです。</p>
+<p><a href="https://github.com/yamorijp/duino-klutch">https://github.com/yamorijp/duino-klutch</a></p>
+<p><strong>duino-klutch-client</strong></p>
+<p>ブラウザ上で動作するクライアントアプリです。</p>
+<p><a href="https://github.com/yamorijp/duino-klutch-client">https://github.com/yamorijp/duino-klutch-client</a></p>
+<p><strong>duino-klutch-demo-server</strong></p>
+<p>APIのスタブを提供するデモ用サーバーです。</p>
+<p><a href="https://github.com/yamorijp/duino-klutch-demo-server">https://github.com/yamorijp/duino-klutch-demo-server</a></p>
+</div></div></div><div class="row"><div class="col-6 lhs"><div class="group-heading way-point" id="group-switch">Switch</div></div><div class="col-6 rhs"></div></div><div class="row"><div class="col-6 lhs"><div class="resource-heading way-point" id="resource-%E3%83%AA%E3%83%AC%E3%83%BC%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81">リレースイッチ</div><div class="description"><p>リレースイッチを操作します。</p>
+<p>モジュール: <code>handlers/OutputSwitch.h</code></p>
+</div></div><div class="col-6 rhs"></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%82%AA%E3%83%B3-get">オン</div><div class="description"><p>HIGH信号を送出してスイッチをONにします。</p>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/switch/relay/on</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/switch/relay/on"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"state"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"updated"</span>: <span class="hljs-number">1527481037</span>
+  }
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%82%AA%E3%83%95-get">オフ</div><div class="description"><p>LOW信号を送出してスイッチをOFFにします。</p>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/switch/relay/off</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/switch/relay/off"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"state"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"updated"</span>: <span class="hljs-number">1527481037</span>
+  }
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%83%88%E3%82%B0%E3%83%AB-get">トグル</div><div class="description"><p>スイッチの状態を反転します。</p>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/switch/relay/toggle</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/switch/relay/toggle"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"state"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"updated"</span>: <span class="hljs-number">1527481037</span>
+  }
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81%E7%8A%B6%E6%85%8B-get">スイッチ状態</div><div class="description"><p>スイッチ状態を取得します。</p>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/switch/relay/state</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/switch/relay/state"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"state"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"updated"</span>: <span class="hljs-number">1527481037</span>
+  }
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="resource-heading way-point" id="resource-%E3%83%A2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E6%84%9F%E7%9F%A5%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81">モーション感知スイッチ</div><div class="description"><p>マイクロ波レーダーセンサースイッチモジュール(RGWL-0516)の状態を取得します。</p>
+<p>モジュール: <code>handlers/InputSwitch.h</code></p>
+</div></div><div class="col-6 rhs"></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E6%84%9F%E7%9F%A5%E7%8A%B6%E6%85%8B-get">感知状態</div><div class="description"><p>センサースイッチモジュールのOUT出力を読み取り検出状態を返します。</p>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/switch/motion/state</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/switch/motion/state"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"state"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"updated"</span>: <span class="hljs-number">1527481037</span>
+  }
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="group-heading way-point" id="group-led">LED</div></div><div class="col-6 rhs"></div></div><div class="row"><div class="col-6 lhs"><div class="resource-heading way-point" id="resource-rgb-led">RGB LED</div><div class="description"><p>RGB LEDを操作します。</p>
+<p>モジュール: <code>handlers/RGBLed.h</code></p>
+</div></div><div class="col-6 rhs"></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E7%82%B9%E7%81%AF-get">点灯</div><div class="description"><p>指定したRGB色でLEDを点灯します。</p>
+<table>
+<thead>
+<tr>
+<th>Color</th>
+<th>Mask</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R</td>
+<td>0xFF0000</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0x00FF00</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0x0000FF</td>
+</tr>
+</tbody>
+</table>
+</div><h5 class="part-heading">Url Parameters</h5><ul class="params"><li class="param"><div class="left"><div><span class="key">data</span></div><div><span class="type">string</span><span class="optional">Optional</span></div><div><span class="default">Default value is ffffff</span><span class="example">Example: ff013c</span></div></div><div class="right"><span class="description">HEX指定のRGBカラー</span></div></li></ul></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/rgb/on</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/led/rgb/on?data={data}"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"red"</span>: <span class="hljs-number">100</span>,
+    <span class="hljs-attr">"green"</span>: <span class="hljs-number">64</span>,
+    <span class="hljs-attr">"blue"</span>: <span class="hljs-number">32</span>
+  }
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E6%B6%88%E7%81%AF-get">消灯</div><div class="description"><p>LEDを消灯します。</p>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/rgb/off</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/led/rgb/off"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"red"</span>: <span class="hljs-number">100</span>,
+    <span class="hljs-attr">"green"</span>: <span class="hljs-number">64</span>,
+    <span class="hljs-attr">"blue"</span>: <span class="hljs-number">32</span>
+  }
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E7%82%B9%E7%81%AF%E7%8A%B6%E6%B3%81-get">点灯状況</div><div class="description"><p>LEDの点灯状況を取得します。</p>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/rgb/state</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/led/rgb/state"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"red"</span>: <span class="hljs-number">100</span>,
+    <span class="hljs-attr">"green"</span>: <span class="hljs-number">64</span>,
+    <span class="hljs-attr">"blue"</span>: <span class="hljs-number">32</span>
+  }
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="resource-heading way-point" id="resource-4%E6%A1%817%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88led">4桁7セグメントLED</div><div class="description"><p>TM1637を使用した4桁7セグメントディスプレイモジュールを操作します。</p>
+<p>モジュール: <code>handlers/FourDigitLed.h</code></p>
+</div></div><div class="col-6 rhs"></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%83%87%E3%82%A3%E3%82%B9%E3%83%97%E3%83%AC%E3%82%A4%E6%B6%88%E7%81%AF-get">ディスプレイ消灯</div><div class="description"><p>ディスプレイを消灯します。</p>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/4digit/clear</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/led/4digit/clear"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: <span class="hljs-literal">null</span>
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E6%95%B0%E5%80%A4-get">数値</div><div class="description"><p>指定した数値をディスプレイへ表示します。</p>
+</div><h5 class="part-heading">Url Parameters</h5><ul class="params"><li class="param"><div class="left"><div><span class="key">data</span></div><div><span class="type">number</span><span class="required">Required</span></div><div><span class="example">Example: 1234</span></div></div><div class="right"><span class="description">表示する4桁の数値 (0-9999)</span></div></li><li class="param"><div class="left"><div><span class="key">leading_zero</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 0</span><span class="example">Example: 1</span></div></div><div class="right"><span class="description">不足している桁を0埋めします (0|1)</span></div></li><li class="param"><div class="left"><div><span class="key">brightness</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 4</span><span class="example">Example: 7</span></div></div><div class="right"><span class="description">明るさ (1-7)</span></div></li></ul></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/4digit/number</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/led/4digit/number?data={data}&amp;leading_zero={leading_zero}&amp;brightness={brightness}"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: <span class="hljs-literal">null</span>
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88-get">セグメント</div><div class="description"><p>セグメント単位での指定でLEDを点灯します。
+表示内容はLED点灯状態を表す16進数表記を桁毎に指定します。</p>
+<p>セグメントとビットフラグの対応は以下の通りです。</p>
+<pre><code class="language-no-highlight"> ---               D:00001000(8)
+|  |     C:00000100(4)  E:00010000(16)
+ ---               G:01000000(64)
+|  |     B:00000010(2)  F:00100000(32)
+ ---               A:00000001(1)
+</code></pre>
+<div class="note">
+<p>例として数字の&quot; -20&quot;を表示するケースを考えます。
+数字の&quot;2&quot;は以下のセグメントを点灯することで表せます。</p>
+<p><code>D, E, G, B, A</code></p>
+<p>各セグメントに対応するビットを立てた値を合算すると&quot;01011011&quot;が求まります。
+これを16進数表記へ変換すると&quot;5b&quot;となります。</p>
+<p><code>0b00000001 | 0b00000010 | 0b01000000 | 0b00010000 | 0b00001000 = 0b01011011 = 0x5b</code></p>
+<p>数字の&quot;0&quot;は以下のセグメントを点灯させます。</p>
+<p><code>D, E, F, A, B, C</code></p>
+<p>同様にして16進数表記を求めると&quot;3f&quot;となります。</p>
+<p>マイナス記号&quot;-&quot;はSEG7を点灯で&quot;40&quot;となります。
+空白の桁は全てのセグメントを点灯させないません。16進数表記では&quot;00&quot;となります。</p>
+<p>値の指定は右端の桁から行います。
+これらを統合すると&quot; -20&quot;を表示するには&quot;3f5b4000&quot;を指定すれば良いことがわかります。
+また、4桁に満たない場合は&quot;00&quot;が補間されるので&quot; -20&quot;の場合は&quot;3f5b40&quot;とすることも可能です。</p>
+</div>
+<div class="note">
+<p>コロンを点灯させるには2桁目に<code>0b10000000</code>を追加します</p>
+</div>
+</div><h5 class="part-heading">Url Parameters</h5><ul class="params"><li class="param"><div class="left"><div><span class="key">data</span></div><div><span class="type">string</span><span class="required">Required</span></div><div><span class="example">Example: ff00ff00ff00ff00</span></div></div><div class="right"><span class="description">桁毎のLED点灯状態を表す16進数表記文字列</span></div></li><li class="param"><div class="left"><div><span class="key">brightness</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 4</span><span class="example">Example: 7</span></div></div><div class="right"><span class="description">明るさ (0-7)</span></div></li></ul></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/4digit/segments</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/led/4digit/segments?data={data}&amp;brightness={brightness}"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: <span class="hljs-literal">null</span>
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%EF%BC%8F%E3%83%80%E3%82%A6%E3%83%B3-get">カウントアップ／ダウン</div><div class="description"><p>数値をカウントアップ／ダウンさせながら表示します。</p>
+</div><h5 class="part-heading">Url Parameters</h5><ul class="params"><li class="param"><div class="left"><div><span class="key">from</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 0</span><span class="example">Example: 100</span></div></div><div class="right"><span class="description">開始数値 (0-9999)</span></div></li><li class="param"><div class="left"><div><span class="key">to</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 0</span><span class="example">Example: 9999</span></div></div><div class="right"><span class="description">完了数値 (0-9999)</span></div></li><li class="param"><div class="left"><div><span class="key">step</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 1</span><span class="example">Example: 10</span></div></div><div class="right"><span class="description">ステップ (1-9999)</span></div></li><li class="param"><div class="left"><div><span class="key">brightness</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 4</span><span class="example">Example: 7</span></div></div><div class="right"><span class="description">明るさ (1-7)</span></div></li></ul></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/4digit/counting</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/led/4digit/counting?from={from}&amp;to={to}&amp;step={step}&amp;brightness={brightness}"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: <span class="hljs-literal">null</span>
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%83%AD%E3%83%BC%E3%83%AB-get">ロール</div><div class="description"><p>minからmaxの数値をランダムで表示します。</p>
+</div><h5 class="part-heading">Url Parameters</h5><ul class="params"><li class="param"><div class="left"><div><span class="key">min</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 0</span><span class="example">Example: 3</span></div></div><div class="right"><span class="description">最小数値 (0-9999)</span></div></li><li class="param"><div class="left"><div><span class="key">max</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 9999</span><span class="example">Example: 15</span></div></div><div class="right"><span class="description">最大数値 (0-9999)</span></div></li><li class="param"><div class="left"><div><span class="key">brightness</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 4</span><span class="example">Example: 7</span></div></div><div class="right"><span class="description">明るさ (1-7)</span></div></li></ul></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/4digit/roll</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/led/4digit/roll?min={min}&amp;max={max}&amp;brightness={brightness}"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"roll"</span>: <span class="hljs-number">12</span>
+  }
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="resource-heading way-point" id="resource-8x8%E3%83%9E%E3%83%88%E3%83%AA%E3%82%AF%E3%82%B9led">8x8マトリクスLED</div><div class="description"><p>MAX7219を使用した8x8マトリクスLEDディスプレイを操作します。</p>
+<p>モジュール: <code>handlers/MatrixLed.h</code></p>
+</div></div><div class="col-6 rhs"></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%83%9E%E3%83%88%E3%83%AA%E3%82%AF%E3%82%B9led%E6%B6%88%E7%81%AF-get">マトリクスLED消灯</div><div class="description"><p>表示中のメッセージをクリアして、ディスプレイを消灯します。</p>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/matrix/clear</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/led/matrix/clear"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: <span class="hljs-literal">null</span>
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8-get">メッセージ</div><div class="description"><p>指定したメッセージをディスプレイへスクロールさせながら表示します。
+instantフラグに<code>1</code>を指定しない場合、メッセージはキューイングされます。</p>
+<div class="warning">
+<p>メッセージはASCII文字のみ対応しています。</p>
+</div>
+</div><h5 class="part-heading">Url Parameters</h5><ul class="params"><li class="param"><div class="left"><div><span class="key">data</span></div><div><span class="type">string</span><span class="required">Required</span></div><div><span class="example">Example: hello</span></div></div><div class="right"><span class="description">メッセージ</span></div></li><li class="param"><div class="left"><div><span class="key">n</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 1</span><span class="example">Example: 3</span></div></div><div class="right"><span class="description">再生回数 (-1=無限再生, -1-100)</span></div></li><li class="param"><div class="left"><div><span class="key">instant</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 0</span><span class="example">Example: 1</span></div></div><div class="right"><span class="description">キューをクリア (0|1)</span></div></li></ul></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/matrix/message</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/led/matrix/message?data={data}&amp;n={n}&amp;instant={instant}"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: <span class="hljs-literal">null</span>
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E6%AC%A1%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8-get">次のメッセージ</div><div class="description"><p>キューイングしている次のメッセージを再生します。</p>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/matrix/next</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/led/matrix/next"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: <span class="hljs-literal">null</span>
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E5%88%97%E6%8C%87%E5%AE%9A-get">列指定</div><div class="description"><p>LED点灯状態を列単位で指定して点灯させます。</p>
+<div class="note">
+<p>表示内容の指定は点灯LEDに対応するビットを立てた16進数表示を使用します。
+例えば&quot;○&quot;記号を表示する場合は以下のようになります。</p>
+<pre><code class="language-no-highlight">1) 00000000 -&gt; 0x00
+2) 00011000 -&gt; 0x18
+3) 00100100 -&gt; 0x24
+4) 01000010 -&gt; 0x42
+5) 01000010 -&gt; 0x42
+6) 00100100 -&gt; 0x24
+7) 00011000 -&gt; 0x18
+8) 00000000 -&gt; 0x00
+</code></pre>
+<p>全ての列を結合して&quot;0018244242241800&quot;となります。</p>
+</div>
+</div><h5 class="part-heading">Url Parameters</h5><ul class="params"><li class="param"><div class="left"><div><span class="key">data</span></div><div><span class="type">string</span><span class="required">Required</span></div><div><span class="example">Example: FF182442422418FF</span></div></div><div class="right"><span class="description">点灯LEDに対応するビットを立てた16進数表記文字列</span></div></li></ul></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/matrix/columns</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/led/matrix/columns?data={data}"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: <span class="hljs-literal">null</span>
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="group-heading way-point" id="group-sensor">Sensor</div></div><div class="col-6 rhs"></div></div><div class="row"><div class="col-6 lhs"><div class="resource-heading way-point" id="resource-%E6%B9%BF%E6%B8%A9%E5%BA%A6">湿温度</div><div class="description"><p>湿温度センサーモジュール(DHT11)から値を読み込みます。</p>
+<p>モジュール: <code>handlers/HygroThermoSensor.h</code></p>
+</div></div><div class="col-6 rhs"></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E6%B8%A9%E6%B9%BF%E5%BA%A6-get">温湿度</div><div class="description"><p>摂氏温度と湿度を取得します。</p>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/sensor/ht</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/sensor/ht"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"temperature"</span>: <span class="hljs-number">27</span>,
+    <span class="hljs-attr">"humidity"</span>: <span class="hljs-number">49</span>
+  }
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="resource-heading way-point" id="resource-%E6%98%8E%E3%82%8B%E3%81%95%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC">明るさセンサー</div><div class="description"><p>明るさセンサー(CdS)から値を読み込みます。</p>
+<p>モジュール: <code>handlers/AnalogSensor.h</code></p>
+</div></div><div class="col-6 rhs"></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E6%98%8E%E3%82%8B%E3%81%95-get">明るさ</div><div class="description"><p>周辺環境の明るさを取得します。1-1024の範囲で周囲が明るいほど小さな値を示します。</p>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/sensor/brightness</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/sensor/brightness"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"value"</span>: <span class="hljs-number">34</span>
+  }
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="group-heading way-point" id="group-ir">IR</div></div><div class="col-6 rhs"></div></div><div class="row"><div class="col-6 lhs"><div class="resource-heading way-point" id="resource-%E8%B5%A4%E5%A4%96%E7%B7%9A%E9%80%81%E4%BF%A1">赤外線送信</div><div class="description"><p>赤外線送信モジュールを使用してリモコンコードを送信します。</p>
+<p>モジュール: <code>handlers/IRTransmitter.h</code>, <code>handlers/MyHomeIRTransmitter.h</code></p>
+</div></div><div class="col-6 rhs"></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-raw-get">Raw</div><div class="description"><p>IRrecvでキャプチャしたrawデータを送信します。</p>
+</div><h5 class="part-heading">Url Parameters</h5><ul class="params"><li class="param"><div class="left"><div><span class="key">data</span></div><div><span class="type">string</span><span class="required">Required</span></div><div><span class="example">Example: 3298,1748,358,1326,358,484,358,484,358,484,358,484</span></div></div><div class="right"><span class="description">カンマ区切りの数値</span></div></li><li class="param"><div class="left"><div><span class="key">hz</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 32</span><span class="example">Example: 38</span></div></div><div class="right"><span class="description">送信周波数</span></div></li></ul></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/ir/transmitter/raw</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/ir/transmitter/raw?data={data}&amp;hz={hz}"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: <span class="hljs-literal">null</span>
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E9%80%81%E4%BF%A1-get">送信</div><div class="description"><p>リモコンコードを送信します。</p>
+<h4 id="">タイプの一覧 <a class="header-anchor" href="#" aria-hidden="true">¶</a></h4>
+<table>
+<thead>
+<tr>
+<th>メーカー</th>
+<th>番号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RC5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>RC6</td>
+<td>2</td>
+</tr>
+<tr>
+<td>NEC</td>
+<td>3</td>
+</tr>
+<tr>
+<td>SONY</td>
+<td>4</td>
+</tr>
+<tr>
+<td>PANASONIC</td>
+<td>5</td>
+</tr>
+<tr>
+<td>JVC</td>
+<td>6</td>
+</tr>
+<tr>
+<td>SAMSUNG</td>
+<td>7</td>
+</tr>
+<tr>
+<td>WHYNTER</td>
+<td>8</td>
+</tr>
+<tr>
+<td>AIWA_RC_T501</td>
+<td>9</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>10</td>
+</tr>
+<tr>
+<td>SANYO</td>
+<td>11</td>
+</tr>
+<tr>
+<td>MITSUBISHI</td>
+<td>12</td>
+</tr>
+<tr>
+<td>DISH</td>
+<td>13</td>
+</tr>
+<tr>
+<td>SHARP</td>
+<td>14</td>
+</tr>
+<tr>
+<td>COOLIX</td>
+<td>15</td>
+</tr>
+<tr>
+<td>DAIKIN</td>
+<td>16</td>
+</tr>
+<tr>
+<td>DENON</td>
+<td>17</td>
+</tr>
+<tr>
+<td>KELVINATOR</td>
+<td>18</td>
+</tr>
+<tr>
+<td>SHERWOOD</td>
+<td>19</td>
+</tr>
+<tr>
+<td>MITSUBISHI_AC</td>
+<td>20</td>
+</tr>
+<tr>
+<td>RCMM</td>
+<td>21</td>
+</tr>
+<tr>
+<td>SANYO_LC7461</td>
+<td>22</td>
+</tr>
+<tr>
+<td>RC5X</td>
+<td>23</td>
+</tr>
+<tr>
+<td>GREE</td>
+<td>24</td>
+</tr>
+<tr>
+<td>PRONTO</td>
+<td>25</td>
+</tr>
+<tr>
+<td>NEC_LIKE</td>
+<td>26</td>
+</tr>
+<tr>
+<td>ARGO</td>
+<td>27</td>
+</tr>
+<tr>
+<td>TROTEC</td>
+<td>28</td>
+</tr>
+<tr>
+<td>NIKAI</td>
+<td>29</td>
+</tr>
+<tr>
+<td>RAW</td>
+<td>30</td>
+</tr>
+<tr>
+<td>GLOBALCACHE</td>
+<td>31</td>
+</tr>
+<tr>
+<td>TOSHIBA_AC</td>
+<td>32</td>
+</tr>
+<tr>
+<td>FUJITSU_AC</td>
+<td>33</td>
+</tr>
+<tr>
+<td>MIDEA</td>
+<td>34</td>
+</tr>
+<tr>
+<td>MAGIQUEST</td>
+<td>35</td>
+</tr>
+<tr>
+<td>LASERTAG</td>
+<td>36</td>
+</tr>
+<tr>
+<td>CARRIER_AC</td>
+<td>37</td>
+</tr>
+<tr>
+<td>HAIER_AC</td>
+<td>38</td>
+</tr>
+<tr>
+<td>MITSUBISHI2</td>
+<td>39</td>
+</tr>
+<tr>
+<td>HITACHI_AC</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+<div class="note">
+<p>NECフォーマット32bitsで&quot;0xFFE01FUL&quot;を送信する例：</p>
+<pre><code class="language-no-highlight">/ir/transmitter/raw?type=3&amp;data=ffe01f&amp;bits=32
+</code></pre>
+</div>
+</div><h5 class="part-heading">Url Parameters</h5><ul class="params"><li class="param"><div class="left"><div><span class="key">data</span></div><div><span class="type">string</span><span class="required">Required</span></div><div><span class="example">Example: ffe01f</span></div></div><div class="right"><span class="description">送信コードを16進数表記で指定します</span></div></li><li class="param"><div class="left"><div><span class="key">type</span></div><div><span class="type">number</span><span class="required">Required</span></div><div><span class="example">Example: 3</span></div></div><div class="right"><span class="description">フォーマットを指定します (1-40)</span></div></li><li class="param"><div class="left"><div><span class="key">bits</span></div><div><span class="type">number</span><span class="required">Required</span></div><div><span class="example">Example: 32</span></div></div><div class="right"><span class="description">ビット数を指定します (1-)</span></div></li></ul></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/ir/transmitter/send</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/ir/transmitter/send?type={type}&amp;data={data}&amp;bits={bits}"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: <span class="hljs-literal">null</span>
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89-get">コマンド</div><div class="description"><p>定義済みのリモコンコマンドを送出します。
+拡張赤外線通信モジュールを使用している場合のみ使用できます。</p>
+<h4 id="">リモコンコマンド一覧 <a class="header-anchor" href="#" aria-hidden="true">¶</a></h4>
+<table>
+<thead>
+<tr>
+<th>コマンド名</th>
+<th>概要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>koizumi_cl_off</td>
+<td>照明をOFF</td>
+</tr>
+<tr>
+<td>koizumi_cl_hi</td>
+<td>照明を全灯モードでON</td>
+</tr>
+<tr>
+<td>koizumi_cl_med</td>
+<td>照明を調灯モードでON</td>
+</tr>
+<tr>
+<td>koizumi_cl_low</td>
+<td>照明を豆球モードでON</td>
+</tr>
+<tr>
+<td>hitachi_ac_off</td>
+<td>エアコンをOFF</td>
+</tr>
+<tr>
+<td>hitachi_ac_heat</td>
+<td>エアコンを暖房モードでON</td>
+</tr>
+<tr>
+<td>hitachi_ac_cool</td>
+<td>エアコンを冷房モードでOFF</td>
+</tr>
+</tbody>
+</table>
+</div><h5 class="part-heading">Url Parameters</h5><ul class="params"><li class="param"><div class="left"><div><span class="key">data</span></div><div><span class="type">string</span><span class="required">Required</span></div><div><span class="example">Example: koizumi_cl_off</span></div></div><div class="right"><span class="description">コマンド名を指定します</span></div></li></ul></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/ir/transmitter/command</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/ir/transmitter/command?data={data}"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: <span class="hljs-literal">null</span>
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="group-heading way-point" id="group-others">Others</div></div><div class="col-6 rhs"></div></div><div class="row"><div class="col-6 lhs"><div class="resource-heading way-point" id="resource-%E3%81%9D%E3%81%AE%E4%BB%96">その他</div><div class="description"><p>デバイス操作を提供します。</p>
+<p>モジュール: <code>handlers/Site.h</code>, <code>handlers/HandlerCOntainer.h</code></p>
+</div></div><div class="col-6 rhs"></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88-get">リセット</div><div class="description"><p>デバイスをリセットします。</p>
+<div class="note">
+<p>ESP.reset() is a hard reset and can leave some of the registers in the old state
+which can lead to problems, its more or less like the reset button on the PC.</p>
+</div>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/reset</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/reset"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: <span class="hljs-literal">null</span>
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E5%86%8D%E8%B5%B7%E5%8B%95-get">再起動</div><div class="description"><p>デバイスを再起動します。</p>
+<div class="note">
+<p>ESP.restart() tells the SDK to reboot, so its a more clean reboot,
+use this one if possible.</p>
+</div>
+<div class="warning">
+<p>the boot mode:(1,7) problem is known and only happens at the first restart after serial flashing.
+if you do one manual reboot by power or RST pin all will work more info
+see: <a href="https://github.com/esp8266/Arduino/issues/1017">#1017</a></p>
+</div>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/restart</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/restart"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: <span class="hljs-literal">null</span>
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%83%92%E3%83%BC%E3%83%97%E3%83%A1%E3%83%A2%E3%83%AA-get">ヒープメモリ</div><div class="description"><p>デバイスのメモリー状況を取得します。</p>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/heap</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/heap"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"vcc"</span>: <span class="hljs-number">65535</span>,
+    <span class="hljs-attr">"free_heap"</span>: <span class="hljs-number">33000</span>,
+    <span class="hljs-attr">"free_sketch_space"</span>: <span class="hljs-number">2818948</span>
+  }
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E6%83%85%E5%A0%B1-get">モジュール情報</div><div class="description"><p>有効なハンドラーモジュールの一覧を取得します。</p>
+</div></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/_handlers</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code><span class="hljs-meta">&lt;?php</span>
+
+$curl = curl_init();
+
+curl_setopt_array($curl, <span class="hljs-keyword">array</span>(
+  CURLOPT_URL =&gt; <span class="hljs-string">"http://duino-k.local/_handlers"</span>,
+  CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword">true</span>,
+  CURLOPT_ENCODING =&gt; <span class="hljs-string">""</span>,
+  CURLOPT_MAXREDIRS =&gt; <span class="hljs-number">10</span>,
+  CURLOPT_TIMEOUT =&gt; <span class="hljs-number">30</span>,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; <span class="hljs-string">"GET"</span>,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+<span class="hljs-keyword">if</span> ($err) {
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"cURL Error #:"</span> . $err;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">echo</span> $response;
+}</code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"items"</span>: [
+      {
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Temperature &amp; Humidity"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"HygroThermoSensor"</span>,
+        <span class="hljs-attr">"group"</span>: <span class="hljs-string">"sensor"</span>,
+        <span class="hljs-attr">"resource"</span>: <span class="hljs-string">"/sensor/ht"</span>
+      }
+    ]
+  }
+}</code></pre></div></div></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script><script>function triggerEvent(el, eventName) {
+	if (!el) return;
+	var evt;
+	try {
+	    evt = new window.Event(eventName, {bubbles: true});
+	}
+	catch (e) {
+	    evt = document.createEvent('Event');
+	    evt.initEvent(eventName, true, false);
+	}
+	finally {
+	    el.dispatchEvent(evt);
+	}
+};
+var docbody = document.querySelector('.doc-body');
+docbody.addEventListener('click', function(e) {
+	if (e.target.classList.contains('expand') || e.target.classList.contains('close')) {
+		var childAttr = e.target.parentNode.parentNode;
+		childAttr.classList.toggle('show');
+	}
+});
+var sidebar = document.querySelector('.sidebar');
+sidebar.addEventListener('click', function(e) {
+	if (e.target.classList.contains('resource-nav-item')) {
+		var selected = sidebar.querySelector('.resource-header.expand');
+		var resourceHeader = e.target.parentNode;
+		if (selected !== e.target.parentNode) {
+			selected && selected.classList.remove('expand');
+			resourceHeader.classList.add('expand');
+		}
+	} else if (e.target.classList.contains('child-nav-text')) {
+		var selected = sidebar.querySelector('.child-nav-item.selected');
+		if (selected !== e.target.parentNode) {
+			selected && selected.classList.remove('selected');
+			e.target.parentNode.classList.add('selected');
+		}
+	} else if (e.target && e.target.parentNode && e.target.parentNode.classList.contains('group-header')) {
+		var selected = sidebar.querySelector('.resource-header.expand');
+		selected && selected.classList.remove('expand');
+		selected = sidebar.querySelector('.child-nav-item.selected');
+		selected && selected.classList.remove('selected');
+	}
+});
+var langBar = document.querySelector('.top-header .lang-header');
+langBar.addEventListener('click', function(e) {
+	if (e.target.classList.contains('lan')) {
+		var selectedLang = langBar.querySelector('.selected');
+		selectedLang = selectedLang && selectedLang.getAttribute('lang')
+		var targetLang = e.target.getAttribute('lang');
+		if (window.location.pathname.indexOf('/' + selectedLang) !== -1) {
+			window.location.pathname = window.location.pathname.replace('/' + selectedLang, '/' + targetLang);
+		} else if (window.location.search.indexOf(selectedLang) !== -1) {
+			window.location.search = window.location.search.replace(selectedLang, targetLang);
+		} else {
+		}
+	}
+})
+var waypoints = document.querySelectorAll('.way-point');
+function selectSection(navEl) {
+	var selected;
+	if (navEl) {
+		if (navEl.classList.contains('child-nav-item')) {
+			var resourceNav = navEl.parentNode.parentNode.parentNode;
+			selected = sidebar.querySelector('.child-nav-item.selected');
+			selected && (selected !== navEl) && selected.classList.remove('selected');
+			selected = sidebar.querySelector('.resource-header.expand');
+			selected && (selected !== resourceNav) && selected.classList.remove('expand');
+			resourceNav.classList.add('expand');
+			navEl.classList.add('selected');
+		} else if (navEl.classList.contains('resource-nav-item')) {
+			selected = sidebar.querySelector('.child-nav-item.selected');
+			selected && (selected !== navEl) && selected.classList.remove('selected');
+			selected = sidebar.querySelector('.resource-header.expand');
+			selected && (selected !== resourceNav) && selected.classList.remove('expand');
+			navEl.parentNode && navEl.parentNode.classList.add('expand');
+		} else {
+			selected = sidebar.querySelector('.child-nav-item.selected');
+			selected && (selected !== navEl) && selected.classList.remove('selected');
+			selected = sidebar.querySelector('.resource-header.expand');
+			selected && (selected !== resourceNav) && selected.classList.remove('expand');
+		}
+	}
+}
+var wayHandler = debounce(function() {
+
+	if (this.element.classList.contains('header-anchor')) {
+		this.element = this.element.parentNode;
+	}
+
+	var tid = this.element.id;
+	var id = '#' + this.element.id;
+
+	var navEl = document.querySelector('.sidebar a[_href=\"' + id + '\"]');
+	selectSection(navEl)
+}, 0, true)
+var hAnchors = document.querySelectorAll('.header-anchor');
+var topElement = document.querySelector('.top')
+for(var i = 0;i < waypoints.length; i++) {
+	new Waypoint({
+		continuous: false,
+		context: document.querySelector('.container'),
+		element: waypoints[i],
+		handler: wayHandler
+	});
+}
+for(var i = 0;i < hAnchors.length; i++) {
+	new Waypoint({
+		continuous: false,
+		context: document.querySelector('.container'),
+		element: hAnchors[i],
+		handler: wayHandler,
+		offset: 20
+	});
+}
+new Waypoint({
+	continuous: false,
+	context: document.querySelector('.container'),
+	element: topElement,
+	handler: wayHandler,
+	offset: -10
+});
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+var h = window.location.hash
+if (h) {
+	var navEl = document.querySelector('.sidebar a[_href=\"' + h + '\"]');
+	var selected;
+	selectSection(navEl)
+} else {
+	var navEl = document.querySelector('.sidebar a');
+	selectSection(navEl)
+}</script></div></body></html>
