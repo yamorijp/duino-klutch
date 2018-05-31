@@ -4,10 +4,14 @@
 
 bool OnParameters::validate(ESP8266WebServer* server) {
   String error;
-  String s = "ffffff" + argStr(server, "data");
+  String s = argStr(server, "data");
+  if (s.startsWith("#")) {
+    s = s.substring(1);
+  }
+  s = "ffffff" + s;
   s = s.substring(s.length() - 6);
   s.toLowerCase();
-  if (!hexPattern(data, true, error)) {
+  if (!hexPattern(s, false, error)) {
     errors->set("data", error);
   }
 
