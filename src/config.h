@@ -31,7 +31,7 @@ struct Config {
   static const bool enableCds = true;
   static const bool enableHt = true;
   static const bool enableFourdigit = true;
-  static const bool enableRgb = false;       // conflict with ht and fourdigit
+  static const bool enableRgb = false;
 
   static const uint8_t matrixNumDisplays = 2;
 

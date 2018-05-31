@@ -50,7 +50,7 @@ void setupModules() {
   if (Config::enableFourdigit)
     handlers.add("4 Digit", new FourDigitLed("/led/4digit", D2, D3));
   if (Config::enableRgb)
-    handlers.add("RGB", new RGBLed("/led/rgb", D1, D2, D3));
+    handlers.add("RGB", new RGBLed("/led/rgb", D7, D4, D5));
 
   handlers.setupAll(&server, &socket);
 
