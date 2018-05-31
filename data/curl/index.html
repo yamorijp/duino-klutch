@@ -594,6 +594,9 @@ socket.onmessage = <span class="hljs-function"><span class="hljs-params">event</
 </tr>
 </tbody>
 </table>
+<p>各色の指定を省略した場合、前方を<code>F</code>で補完します。<br>
+例えば<code>12</code>を指定した場合、<code>FFFF12</code>を指定したものとして扱われます。</p>
+<p>また、先頭文字の<code>#</code>記号は無視されます。</p>
 </div><h5 class="part-heading">Url Parameters</h5><ul class="params"><li class="param"><div class="left"><div><span class="key">data</span></div><div><span class="type">string</span><span class="optional">Optional</span></div><div><span class="default">Default value is ffffff</span><span class="example">Example: ff013c</span></div></div><div class="right"><span class="description">HEX指定のRGBカラー</span></div></li></ul></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/rgb/on</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code>curl --request GET \<br>  --url <span class="hljs-string">'http://duino-k.local/led/rgb/on?data={data}'</span></code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
   <span class="hljs-attr">"data"</span>: {
@@ -627,35 +630,89 @@ socket.onmessage = <span class="hljs-function"><span class="hljs-params">event</
 </div><h5 class="part-heading">Url Parameters</h5><ul class="params"><li class="param"><div class="left"><div><span class="key">data</span></div><div><span class="type">number</span><span class="required">Required</span></div><div><span class="example">Example: 1234</span></div></div><div class="right"><span class="description">表示する4桁の数値 (0-9999)</span></div></li><li class="param"><div class="left"><div><span class="key">leading_zero</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 0</span><span class="example">Example: 1</span></div></div><div class="right"><span class="description">不足している桁を0埋めします (0|1)</span></div></li><li class="param"><div class="left"><div><span class="key">brightness</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 4</span><span class="example">Example: 7</span></div></div><div class="right"><span class="description">明るさ (1-7)</span></div></li></ul></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/4digit/number</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code>curl --request GET \<br>  --url <span class="hljs-string">'http://duino-k.local/led/4digit/number?data={data}&amp;leading_zero={leading_zero}&amp;brightness={brightness}'</span></code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
   <span class="hljs-attr">"data"</span>: <span class="hljs-literal">null</span>
-}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88-get">セグメント</div><div class="description"><p>セグメント単位での指定でLEDを点灯します。
-表示内容はLED点灯状態を表す16進数表記を桁毎に指定します。</p>
-<p>セグメントとビットフラグの対応は以下の通りです。</p>
-<pre><code class="language-no-highlight"> ---               D:00001000(8)
-|  |     C:00000100(4)  E:00010000(16)
- ---               G:01000000(64)
-|  |     B:00000010(2)  F:00100000(32)
- ---               A:00000001(1)
-</code></pre>
+}</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88-get">セグメント</div><div class="description"><p>4桁それぞれへセグメントコードを指定してLEDを点灯させます。</p>
+<p>4桁分のセグメントコードは左の桁から順につなげて指定します。<br>
+例えば、ディスプレイに<code>0123</code>を表示させる場合は<code>3f065b4f</code>となります。</p>
+<h4 id="">セグメントコード <a class="header-anchor" href="#" aria-hidden="true">¶</a></h4>
+<table>
+<thead>
+<tr>
+<th>表示する数</th>
+<th>コード(16進数)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>3f</td>
+</tr>
+<tr>
+<td>1</td>
+<td>06</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5b</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4f</td>
+</tr>
+<tr>
+<td>4</td>
+<td>66</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6d</td>
+</tr>
+<tr>
+<td>6</td>
+<td>7d</td>
+</tr>
+<tr>
+<td>7</td>
+<td>07</td>
+</tr>
+<tr>
+<td>8</td>
+<td>7f</td>
+</tr>
+<tr>
+<td>9</td>
+<td>6f</td>
+</tr>
+<tr>
+<td>A</td>
+<td>77</td>
+</tr>
+<tr>
+<td>b</td>
+<td>7c</td>
+</tr>
+<tr>
+<td>C</td>
+<td>39</td>
+</tr>
+<tr>
+<td>d</td>
+<td>5e</td>
+</tr>
+<tr>
+<td>E</td>
+<td>79</td>
+</tr>
+<tr>
+<td>F</td>
+<td>71</td>
+</tr>
+</tbody>
+</table>
 <div class="note">
-<p>例として数字の&quot; -20&quot;を表示するケースを考えます。
-数字の&quot;2&quot;は以下のセグメントを点灯することで表せます。</p>
-<p><code>D, E, G, B, A</code></p>
-<p>各セグメントに対応するビットを立てた値を合算すると&quot;01011011&quot;が求まります。
-これを16進数表記へ変換すると&quot;5b&quot;となります。</p>
-<p><code>0b00000001 | 0b00000010 | 0b01000000 | 0b00010000 | 0b00001000 = 0b01011011 = 0x5b</code></p>
-<p>数字の&quot;0&quot;は以下のセグメントを点灯させます。</p>
-<p><code>D, E, F, A, B, C</code></p>
-<p>同様にして16進数表記を求めると&quot;3f&quot;となります。</p>
-<p>マイナス記号&quot;-&quot;はSEG7を点灯で&quot;40&quot;となります。
-空白の桁は全てのセグメントを点灯させないません。16進数表記では&quot;00&quot;となります。</p>
-<p>値の指定は右端の桁から行います。
-これらを統合すると&quot; -20&quot;を表示するには&quot;3f5b4000&quot;を指定すれば良いことがわかります。
-また、4桁に満たない場合は&quot;00&quot;が補間されるので&quot; -20&quot;の場合は&quot;3f5b40&quot;とすることも可能です。</p>
+<p><strong>8番目のセグメントを点灯させる</strong><br>
+コロンやピリオドを点灯させるには上記のコードに<code>0x80</code>(16進数)を加算した値をセグメントコードとして指定します。</p>
 </div>
-<div class="note">
-<p>コロンを点灯させるには2桁目に<code>0b10000000</code>を追加します</p>
-</div>
-</div><h5 class="part-heading">Url Parameters</h5><ul class="params"><li class="param"><div class="left"><div><span class="key">data</span></div><div><span class="type">string</span><span class="required">Required</span></div><div><span class="example">Example: ff00ff00ff00ff00</span></div></div><div class="right"><span class="description">桁毎のLED点灯状態を表す16進数表記文字列</span></div></li><li class="param"><div class="left"><div><span class="key">brightness</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 4</span><span class="example">Example: 7</span></div></div><div class="right"><span class="description">明るさ (0-7)</span></div></li></ul></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/4digit/segments</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code>curl --request GET \<br>  --url <span class="hljs-string">'http://duino-k.local/led/4digit/segments?data={data}&amp;brightness={brightness}'</span></code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
+</div><h5 class="part-heading">Url Parameters</h5><ul class="params"><li class="param"><div class="left"><div><span class="key">data</span></div><div><span class="type">string</span><span class="required">Required</span></div><div><span class="example">Example: 3f065b4f</span></div></div><div class="right"><span class="description">4桁分のセグメントコード</span></div></li><li class="param"><div class="left"><div><span class="key">brightness</span></div><div><span class="type">number</span><span class="optional">Optional</span></div><div><span class="default">Default value is 4</span><span class="example">Example: 7</span></div></div><div class="right"><span class="description">明るさ (0-7)</span></div></li></ul></div><div class="col-6 rhs"><div class="api-definition"><div class="api-definition-heading rhs-heading">Definition</div><div class="api-definition-description rhs-highlight code"><span class="api-method get">GET</span><span class="api-url"> http://duino-k.local/led/4digit/segments</span></div></div><div class="sample-request-heading rhs-heading">Request</div><div class="sample-request"><div class="sample-request-heading rhs-heading">Example Request</div><div class="sample-request-description rhs-highlight code"> <pre class="hljs"><code>curl --request GET \<br>  --url <span class="hljs-string">'http://duino-k.local/led/4digit/segments?data={data}&amp;brightness={brightness}'</span></code></pre></div></div><div class="sample-response"><div class="sample-response-heading rhs-heading"> <span>Response </span><span class="status-code">200</span></div><div class="headers"><div class="headers-heading rhs-heading">Response Headers</div><div class="headers-description code rhs-highlight"><pre class="hljs"><code><div class="header-row"><span class="key hljs-attr">Content-Type: </span><span class="value">application/json</span></div></code></pre></div></div><div class="sample-response-body rhs-heading">Response Body</div><div class="sample-response-body-description rhs-highlight code"><pre class="hljs"><code>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-string">"success"</span>,
   <span class="hljs-attr">"data"</span>: <span class="hljs-literal">null</span>
 }</code></pre></div></div></div></div><div class="row"><div class="col-6 lhs"><div class="transition-heading way-point" id="transition-%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%EF%BC%8F%E3%83%80%E3%82%A6%E3%83%B3-get">カウントアップ／ダウン</div><div class="description"><p>数値をカウントアップ／ダウンさせながら表示します。</p>
