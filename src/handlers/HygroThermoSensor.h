@@ -3,7 +3,6 @@
 
 #include "BaseHandler.h"
 #include <memory>
-#include <Adafruit_Sensor.h>
 #include <DHTNew.h>
 #include <Ticker.h>
 
