@@ -23,6 +23,7 @@ void AnalogSensor::loop() {
 void AnalogSensor::update() {
   _data = toJsonObject("value", _value);
   broadcast(_route, _data);
+  BaseHandler::update();
 }
 
 void AnalogSensor::readSensor() {

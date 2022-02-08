@@ -52,6 +52,7 @@ private:
   void _respond(uint16_t code, String status, const String& data, String errorMessage="");
   ESP8266WebServer* _server;
   WebSocketsServer* _socket;
+  std::function<void(void)> _update;
 
 protected:
   /** 成功レスポンスを送出する */
@@ -77,6 +78,16 @@ public:
 
   /** LEDの消灯などモジュールのリセット処理を実装 */
   virtual void clear() {
+  }
+
+  /** 状態の更新 */
+  virtual void update() {
+    if (_update) _update();
+  }
+
+  /** updateイベント */
+  void onUpdate(std::function<void(void)> f) {
+    _update = f;
   }
 
   /** メインループで実行する処理を実装 */

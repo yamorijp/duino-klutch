@@ -1,40 +1,38 @@
 #ifndef INPUTSWITCH_H_
 #define INPUTSWITCH_H_
 
-
 #include "BaseHandler.h"
 #include <Ticker.h>
-#include <time.h>
 
 /**
  * スイッチ入力
- */ 
+ * HIGH/LOW入力のあるデジタルスイッチ。PIRモジュールなども含む。
+ */
 class InputSwitch : public BaseHandler {
+
+protected:
+  String _route;
 
 private:
   uint8_t _pin;
-  String _route;
-  Ticker _ticker;
-  bool _state;
-  time_t _updated;
   uint16_t _interval;
-  bool _dirty;
   String _data;
-  void update();
+  time_t _updated;
+  bool _state;
+  bool _dirty;
+  Ticker _ticker;
 
 public:
-  InputSwitch(String route, uint8_t pin, uint16_t intervalMs=3000) {
-    _pin = pin;
-    _route = route;
-    _interval = intervalMs;
-    _updated = time(NULL);
-  }
+  InputSwitch(String route, uint8_t pin, uint16_t interval=1000) :
+    _route(route), _pin(pin), _interval(interval), _data("{}"), _updated(0), _state(false), _dirty(false) {}
   void setup(ESP8266WebServer* server, WebSocketsServer* socket);
   void loop();
-  void readState();
+  void readState(bool force=false);
   static void tick(InputSwitch* obj);
+  bool getState();
+  void update();
 
-  HandlerInfo getHandlerInfo() {
+  virtual HandlerInfo getHandlerInfo() {
     HandlerInfo info;
     info.type = "InputSwitch";
     info.group = "switch";

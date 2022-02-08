@@ -37,14 +37,11 @@ protected:
   std::unique_ptr<IRsend> ir;
 
 public:
-  IRTransmitter(String route, int8_t dataPin) {
-    _route = route;
-    _pin = dataPin;
-  }
+  IRTransmitter(String route, int8_t dataPin) : _route(route), _pin(dataPin) {}
   virtual void setup(ESP8266WebServer* server, WebSocketsServer* socket);
   void send(int16_t type, String data, int16_t bits);
   void sendRaw(String data, int16_t hz=32);
-  
+
   HandlerInfo getHandlerInfo() {
     HandlerInfo info;
     info.type = "IRTransmitter";

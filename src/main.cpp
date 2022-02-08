@@ -6,64 +6,85 @@
 #include <ESP8266mDNS.h>
 #include <ESP8266WebServer.h>
 #include <WebSocketsServer.h>
-#include <time.h>
+#include <ArduinoOTA.h>
+#include <ezTime.h>
 #include <DNSServer.h>
 #include <WiFiManager.h>
 
-#include "config.h"
-#include "handlers/BaseHandler.h"
 #include "handlers/HandlerContainer.h"
-#include "handlers/Site.h"
-#include "handlers/RGBLed.h"
-#include "handlers/MatrixLed.h"
-#include "handlers/FourDigitLed.h"
-#include "handlers/AnalogSensor.h"
-#include "handlers/HygroThermoSensor.h"
-#include "handlers/MyHomeIRTransmitter.h"
-#include "handlers/OutputSwitch.h"
-#include "handlers/InputSwitch.h"
 
-ESP8266WebServer server(Config::httpPort);
-WebSocketsServer socket(Config::wsPort);
+#define PROFILE_DUINO_K
+
+#if defined(PROFILE_DUINO_K)
+  #include "profile/duino_k.h"
+#elif defined(PROFILE_DUINO_H)
+  #include "profile/duino_h.h"
+#else
+  #include "profile/template.h"
+#endif
+
+Timezone tz;
+ESP8266WebServer server(config::httpPort);
+WebSocketsServer socket(config::wsPort);
 HandlerContainer handlers;
 
 void setupModules() {
   Serial.println(F("initializing modules..."));
   randomSeed(analogRead(0));
 
-  if (Config::enableSite)
-    handlers.add("Site", new Site(""));
-  if (Config::enableRelay)
-    handlers.add("Relay", new OutputSwitch("/switch/relay", D0));
-  if (Config::enableMatrix)
-    handlers.add("Matrix", new MatrixLed("/led/matrix", D4, Config::matrixNumDisplays));
-  if (Config::enableIr)
-    handlers.add("IR Remote", new IRTransmitter("/ir/transmitter", D8));
-  if (Config::enableIrx)
-    handlers.add("IR Remote", new MyHomeIRTransmitter("/ir/transmitter", D8));
-  if (Config::enableMotion)
-    handlers.add("Motion", new InputSwitch("/switch/motion", D6));
-  if (Config::enableHt)
-    handlers.add("Temperature & Humidity", new HygroThermoSensor("/sensor/ht", D1));
-  if (Config::enableCds)
-    handlers.add("Brightness", new AnalogSensor("/sensor/brightness", A0));
-  if (Config::enableFourdigit)
-    handlers.add("4 Digit", new FourDigitLed("/led/4digit", D2, D3));
-  if (Config::enableRgb)
-    handlers.add("RGB", new RGBLed("/led/rgb", D7, D4, D5));
-
+  profile::setup(&handlers, &tz);
   handlers.setupAll(&server, &socket);
 
   Serial.println(F("done"));
   Serial.println("");
 }
 
+void setupNetwork() {
+  // wifi
+  Serial.println(F("trying connect access point..."));
+  WiFiManager wifiManager;
+  if (config::resetWifiSettings) {
+    wifiManager.resetSettings();
+  }
+
+  // static ip
+  if (config::enableStaticIp) {
+    IPAddress ip = IPAddress();
+    ip.fromString(config::ipAddr);
+    IPAddress gw = IPAddress();
+    gw.fromString(config::ipGateway);
+    IPAddress sm = IPAddress();
+    sm.fromString(config::ipSubnetMask);
+    wifiManager.setSTAStaticIPConfig(ip, gw, sm);
+  }
+
+  wifiManager.autoConnect(config::hostname);
+  Serial.println(F("connected"));
+}
+
+void setupOTA() {
+  ArduinoOTA.setHostname(config::hostname);
+  ArduinoOTA.onStart([](){
+    Serial.println("OTA Start: " + ArduinoOTA.getCommand());
+  });
+  ArduinoOTA.onEnd([](){
+    Serial.println("\nOTA End");
+  });
+  ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
+    Serial.printf("OTA Progress: %u%%\r", (progress / (total / 100)));
+  });
+  ArduinoOTA.onError([](ota_error_t error) {
+    Serial.printf("OTA Error: %u", error);
+  });
+  ArduinoOTA.begin();
+}
+
 void setupMdnsResponder() {
   Serial.println(F("trying start mdsn responder..."));
-  if (MDNS.begin(Config::hostname, WiFi.localIP())) {
+  if (MDNS.begin(config::hostname, WiFi.localIP())) {
     MDNS.addService("http", "tcp", 80);
     Serial.println(F("mdns responder started"));
-    Serial.printf("http://%s.local\n", Config::hostname);
+    Serial.printf("http://%s.local\n", config::hostname);
   } else {
     Serial.println(F("error setting up mdsn responder!"));
   }
@@ -72,15 +93,17 @@ void setupMdnsResponder() {
   Serial.println("");
 }
 
-void setupNtp() {
-  Serial.println(F("trying to connect ntp server..."));
-  configTime(Config::timezone, 0, Config::ntp1, Config::ntp2);
-  while (time(NULL) == 0) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.println(F("ntp synced"));
+void setupTime() {
+  Serial.print(F("Synchronizing time..."));
+  ezt::setServer(config::ntp);
+  ezt::setInterval(7200);
+  ezt::waitForSync();
+
+  Serial.print("Timestamp: ");
+  Serial.println(UTC.now());
+  Serial.println("UTC: " + UTC.dateTime(ISO8601));
+  tz.setPosix(config::tz);
+  Serial.println("Local: " + tz.dateTime(ISO8601));
   Serial.println("");
 }
 
@@ -103,7 +126,7 @@ void onEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length) {
 void setup(void) {
   // Serial.begin(115200, SERIAL_8N1, SERIAL_TX_ONLY);
   Serial.begin(115200);
-  Serial.setDebugOutput(Config::enableDebug);
+  Serial.setDebugOutput(config::enableDebug);
 
   // macアドレス表示
   Serial.println("");
@@ -113,14 +136,15 @@ void setup(void) {
   // wifi
   Serial.println(F("trying connect access point..."));
   WiFiManager wifiManager;
-  if (Config::resetWifiSettings) {
+  if (config::resetWifiSettings) {
     wifiManager.resetSettings();
   }
-  wifiManager.autoConnect(Config::hostname);
+  wifiManager.autoConnect(config::hostname);
   Serial.println(F("connected"));
 
+  setupNetwork();
   setupMdnsResponder();
-  setupNtp();
+  setupTime();
   setupModules();
 
   server.begin();
@@ -131,13 +155,17 @@ void setup(void) {
   Serial.println(F("websocket server started"));
 
   Serial.println("");
-  Serial.print(Config::hostname);
+  Serial.print(config::hostname);
   Serial.println(F(" is now online. Roll with it!"));
 }
 
 void loop(void) {
+  ArduinoOTA.handle();
+  // MDNS.update(); // ArduinoOTA.handle内で処理されるので不要
+  ezt::events();
   server.handleClient();
   socket.loop();
   handlers.loopAll();
+  profile::loop();
   delay(10);
 }

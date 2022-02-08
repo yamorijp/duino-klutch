@@ -28,10 +28,12 @@ void HygroThermoSensor::update() {
   _data = json;
 
   broadcast(_route, _data);
+  BaseHandler::update();
 }
 
 void HygroThermoSensor::readSensor() {
-  if (_sensor->read() && _sensor->getError() == DHT_ERROR_NONE) {
+  int res = _sensor->read();
+  if (res == DHTLIB_OK) {
     bool changed = false;
 
     float temperature = _sensor->getTemperature();
@@ -44,7 +46,7 @@ void HygroThermoSensor::readSensor() {
       _humidity = humidity;
       changed = true;
     }
-    
+
     if (changed) {
       update();
     }

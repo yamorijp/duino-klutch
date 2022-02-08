@@ -155,6 +155,15 @@ https://github.com/yamorijp/duino-klutch-demo-server
     + green: `64` (number)
     + blue: `32` (number)
 
+
+### Clock
+
++ status: `success` (string)
++ data (object)
+    + value: 1527481037 (number)
+    + timer: 90 (number)
+
+
 ### HandlerInfo
 
 + name: `Temperature & Humidity` (string)
@@ -201,11 +210,26 @@ LOW信号を送出してスイッチをOFFにします。
     + Attribute (State)
 
 
+## モーション感知スイッチ [/switch/sw]
+
+マイクロ波レーダーセンサースイッチモジュール(RGWL-0516)の状態を取得します。
+
+モジュール: `handlers/MotionInputSwitch.h`, `handlers/InputSwitch.h`
+
+### 感知状態 [GET /switch/motion/state]
+
+センサースイッチモジュールのOUT出力を読み取り検出状態を返します。
+
++ Response 200 (application/json)
+    + Attribute (State)
+
+
+
 ## モーション感知スイッチ [/switch/motion]
 
 マイクロ波レーダーセンサースイッチモジュール(RGWL-0516)の状態を取得します。
 
-モジュール: `handlers/InputSwitch.h`
+モジュール: `handlers/MotionInputSwitch.h`
 
 ### 感知状態 [GET /switch/motion/state]
 
@@ -583,13 +607,100 @@ hitachi_ac_cool | エアコンを冷房モードでOFF
     + Attribute (Success)
 
 
+# Group Devices
+
+## タイマー時計 [/device/clock]
+
+時刻は分刻み。
+
+モジュール: `handlers/Clock.h`
+
+### タイマー [GET /device/clock/timer{?delay,pre,post}]
+
+タイマーのセット。
+
++ Parameters:
+    + delay: `90` (number, required) - タイマー秒数
+    + pre: `0` (nubmer, optional) - タイマー開始時に実行する定義アクション
+      + Default: `0`
+    + post: `0` (numer, optional) - タイマー完了時に実行する定義アクション 
+      + Default: `0`
+
++ Response 200 (application/json)
+    + Attribute(Clock)
+
+
+### クリア [GET /device/clock/clear]
+
+タイマーのクリア。
+
++ Response 200 (application/json)
+    + Attribute(Clock)
+
+
+## ブザー [/device/buzzer]
+
+ブザー。
+
+### ビープ音 [GET /device/buzzer{?freq,duration,beeps,cycles}]
+
+ビープ音を鳴らす。
+
++ Parameters:
+    + freq: `90` (number, optional) - 周波数
+      + Default: 3520
+    + duration: `100` (nubmer, optional) - 長さ
+      + Default: `50`
+    + beeps: `1` (numer, optional) - 連音回数
+      + Default: `1`
+    + cycles: `4` (number, optional) - 繰り返し回数
+      + Defualt: `1`
+
++ Response 200 (application/json)
+    + Attribute (Success)
+
+
+### クリア [GET /device/buzzer/clear]
+
+ブザー音のクリア。
+
++ Response 200 (application/json)
+    + Attribute (Success)
+
+
+## ディスプレイ [/device/display]
+
+ディスプレイ。
+
+### 明るさ [GET /device/display/brightness{?data}]
+
+明るさ調整。
+
++ Parameters:
+    + data: `90` (number, optional) - 明るさ
+      + Default: 255
+
++ Response 200 (application/json)
+    + Attribute (Success)
+
+
+
+### クリア [GET /device/display/clear]
+
+画面クリア。
+
++ Response 200 (application/json)
+    + Attribute (Success)
+
+
+
 # Group Others
 
 ## その他 [/]
 
 デバイス操作を提供します。
 
-モジュール: `handlers/Site.h`, `handlers/HandlerCOntainer.h`
+モジュール: `handlers/Site.h`, `handlers/HandlerContainer.h`
 
 ### リセット [GET /reset]
 

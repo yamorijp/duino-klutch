@@ -95,7 +95,7 @@ void FourDigitLed::setup(ESP8266WebServer* server, WebSocketsServer* socket) {
   _display->showNumberDec(0);
 
   server->on(_route + "/clear", [this, server](){
-    this->clear();
+    this->clear(true);
     this->success("");
   });
 
@@ -141,16 +141,21 @@ void FourDigitLed::setup(ESP8266WebServer* server, WebSocketsServer* socket) {
   });
 }
 
-void FourDigitLed::clear() {
+void FourDigitLed::clear(bool update) {
   _ticker.detach();
   _display->setBrightness(0, false);
   _display->showNumberDec(0);
+  setMode(FOURDIGITLED_MODE_IDLE);
+  if (update) {
+    BaseHandler::update();
+  }
 }
 
 void FourDigitLed::number(uint16_t data, bool leadingZero, uint8_t brightness) {
   clear();
   _display->setBrightness(brightness);
   _display->showNumberDec(data, leadingZero);
+  setMode(FOURDIGITLED_MODE_ACTIVE);
 }
 
 void FourDigitLed::segments(String data, uint8_t brightness) {
@@ -164,6 +169,14 @@ void FourDigitLed::segments(String data, uint8_t brightness) {
     segments[i / 2] = strtoul(hex, 0, 16);
   }
   _display->setSegments(segments);
+  setMode(FOURDIGITLED_MODE_ACTIVE);
+}
+
+void FourDigitLed::clock(uint8_t hour, uint8_t minute, uint8_t brightness) {
+  clear();
+  _display->setBrightness(brightness);
+  _display->showNumberDecEx(hour * 100 + minute, 0b01000000, true);
+  setMode(FOURDIGITLED_MODE_CLOCK);
 }
 
 void FourDigitLed::counting(uint16_t from, uint16_t to, uint16_t step, uint8_t brightness) {
@@ -177,6 +190,7 @@ void FourDigitLed::counting(uint16_t from, uint16_t to, uint16_t step, uint8_t b
   } else {
     _ticker.attach_ms(50, countdown, this);
   }
+  setMode(FOURDIGITLED_MODE_ACTIVE);
 }
 
 void FourDigitLed::countup(FourDigitLed* obj) {
@@ -206,5 +220,15 @@ uint16_t FourDigitLed::roll(uint16_t min, uint16_t max, uint8_t brightness) {
 
   int rolled = random(min, max + 1);
   _display->showNumberDec(rolled);
+  setMode(FOURDIGITLED_MODE_ACTIVE);
+
   return rolled;
+}
+
+uint8_t FourDigitLed::getMode() {
+  return _mode;
+}
+
+void FourDigitLed::setMode(uint8_t mode) {
+  _mode = mode;
 }

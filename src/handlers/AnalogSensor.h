@@ -9,22 +9,19 @@
  */
 class AnalogSensor : public BaseHandler {
 private:
-  uint8_t _pin;
   String _route;
-  Ticker _ticker;
+  uint8_t _pin;
   uint16_t _interval;
   float _value;
   bool _dirty;
   String _data;
-  void update();
+  Ticker _ticker;
 
 public:
-  AnalogSensor(String route, uint8_t aPin, uint16_t intervalMs=3000) {
-    _pin = aPin;
-    _route = route;
-    _interval = intervalMs;
-  }
+  AnalogSensor(String route, uint8_t aPin, uint16_t interval=3000) :
+    _route(route), _pin(aPin), _interval(interval), _value(0.0), _dirty(false), _data("{}") {}
   void setup(ESP8266WebServer* server, WebSocketsServer* socket);
+  void update();
   void loop();
   void readSensor();
   static void tick(AnalogSensor* obj);

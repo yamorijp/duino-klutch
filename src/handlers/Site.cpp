@@ -1,18 +1,31 @@
-#include <FS.h>
 #include <ESP8266WiFi.h>
+#include <LittleFS.h>
 #include "Site.h"
 #include "../config.h"
+
+void walkDir(String root, std::function<void(String)> func) {
+  Dir dir = LittleFS.openDir(root);
+  while (dir.next()) {
+    String path = root + "/" + dir.fileName();
+    if (dir.isDirectory()) {
+      walkDir(path, func);
+    } else {
+      func(path);
+    }
+  }
+}
 
 void Site::setup(ESP8266WebServer* server, WebSocketsServer* socket) {
   BaseHandler::setup(server, socket);
 
-  SPIFFS.begin();
-  Dir dir = SPIFFS.openDir("/");
-  while (dir.next()) {
-    server->serveStatic(
-      String("/docs" + dir.fileName()).c_str(), SPIFFS, dir.fileName().c_str());
-  };
-  server->on(_route + "/", [this, server]() {
+  LittleFS.begin();
+  
+  walkDir("", [server](String path) {
+    server->serveStatic(path.c_str(), LittleFS, path.c_str());
+  });
+  server->serveStatic("/", LittleFS, "/index.html");
+  
+  server->on(_route + "/docs", [this, server]() {
     server->sendHeader("Location", "/docs/curl/index.html", true);
     server->send(302, "text/plain", "");
   });

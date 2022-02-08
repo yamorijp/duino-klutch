@@ -3,7 +3,7 @@
 
 #include "BaseHandler.h"
 #include <memory>
-#include <DHTNew.h>
+#include <dhtnew.h>
 #include <Ticker.h>
 
 /**
@@ -13,30 +13,26 @@ class HygroThermoSensor : public BaseHandler {
 private:
   String _route;
   uint8_t _pin;
-  DHTModel_t _model;
-  std::unique_ptr<DHT> _sensor;
   uint16_t _interval;
   float _temperature;
   float _humidity;
-  Ticker _ticker;
   String _data;
   bool _dirty;
-  void update();
+  Ticker _ticker;
+  std::unique_ptr<DHTNEW> _sensor;
 
 public:
-  HygroThermoSensor(String route, uint8_t outPin, DHTModel_t model = DHT_MODEL_DHT11, uint16_t intervalMs = 30000) {
-    _route = route;
-    _pin = outPin;
-    _model = model;
-    _interval = intervalMs;
-    _sensor.reset(new DHT(outPin, model));
-    _sensor->begin();
+  HygroThermoSensor(String route, uint8_t outPin, uint16_t interval = 10000) :
+    _route(route), _pin(outPin), _interval(interval), _temperature(0.0), _humidity(0.0), _data("{}"), _dirty(false)
+  {
+    _sensor.reset(new DHTNEW(outPin));
   }
+  void update();
   void loop();
   void setup(ESP8266WebServer* server, WebSocketsServer* socket);
   void readSensor();
   static void tick(HygroThermoSensor* obj);
-  
+
   HandlerInfo getHandlerInfo() {
     HandlerInfo info;
     info.type = "HygroThermoSensor";

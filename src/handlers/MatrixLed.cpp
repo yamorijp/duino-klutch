@@ -87,6 +87,7 @@ void MatrixLed::clear() {
   _countdown = 0;
   _ledMatrix->clear();
   _ledMatrix->commit();
+  setMode(MATRIXLED_MODE_IDLE);
 }
 
 void MatrixLed::message(String data, int16_t n, bool instant) {
@@ -96,6 +97,7 @@ void MatrixLed::message(String data, int16_t n, bool instant) {
   item.n = n;
   _queue.push_back(item);
   if (!_ticker.active()) next();
+  setMode(MATRIXLED_MODE_ACTIVE);
 }
 
 void MatrixLed::next() {
@@ -131,6 +133,7 @@ void MatrixLed::columns(String data) {
     _ledMatrix->setColumn(i / 2, b);
   }
   _ledMatrix->commit();
+  setMode(MATRIXLED_MODE_ACTIVE);
 }
 
 void MatrixLed::scrollText(MatrixLed* obj) {
@@ -143,4 +146,13 @@ void MatrixLed::scrollText(MatrixLed* obj) {
   obj->_ledMatrix->scrollTextLeft();
   obj->_ledMatrix->drawText();
   obj->_ledMatrix->commit();
+}
+
+void MatrixLed::setMode(uint8_t mode) {
+  _mode = mode;
+  BaseHandler::update();
+}
+
+uint8_t MatrixLed::getMode() {
+  return _mode;
 }

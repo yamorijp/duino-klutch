@@ -5,7 +5,7 @@
 
 struct Config {
   // timezone
-  static const uint16_t timezone = 3600 * 9;  // UTC+9
+  static constexpr const char* tz = "JST-9";
 
   // ntp servers
   static constexpr const char* ntp1 = "ntp.nict.jp";
@@ -22,7 +22,7 @@ struct Config {
   static constexpr const char* apPasswd = "8086";
 
   // active handlers
-  static const bool enableSite = true;
+/*   static const bool enableSite = true;
   static const bool enableRelay = true;
   static const bool enableMatrix = true;
   static const bool enableIrx = true;
@@ -31,7 +31,7 @@ struct Config {
   static const bool enableCds = true;
   static const bool enableHt = true;
   static const bool enableFourdigit = true;
-  static const bool enableRgb = false;
+  static const bool enableRgb = false; */
 
   static const uint8_t matrixNumDisplays = 2;
 
@@ -40,6 +40,12 @@ struct Config {
 
   // reset saved wifi settings
   static const bool resetWifiSettings = false;
+
+  // static ip address settings
+  static const bool enableStaticIp = true;
+  static constexpr const char* ipAddr = "192.168.1.9";
+  static constexpr const char* ipGateway = "192.168.1.1";
+  static constexpr const char* ipSubnetMask = "255.255.255.0";
 };
 
 #endif

@@ -1,33 +1,38 @@
 #ifndef OUTPUTSWITCH_H_
 #define OUTPUTSWITCH_H_
 
-#include <time.h>
 #include "BaseHandler.h"
+
+
+class LockParameters : public Parameters {
+public:
+  bool state;
+  bool validate(ESP8266WebServer* server);
+};
 
 /**
  * スイッチ出力
- */ 
+ */
 class OutputSwitch : public BaseHandler {
 private:
-  uint8_t _pin;
   String _route;
-  bool _state;
-  time_t _updated;
+  uint8_t _pin;
   String _data;
-  void update();
+  time_t _updated;
+  bool _state;
+  bool _locking;
+
 public:
-  OutputSwitch(String route, uint8_t pin) {
-    _route = route;
-    _pin = pin;
-    _updated = time(NULL);
-  };
+  OutputSwitch(String route, uint8_t pin) :
+    _route(route), _pin(pin), _data("{}"), _updated(0), _state(false), _locking(false) {};
   void setup(ESP8266WebServer* server, WebSocketsServer* socket);
-  void on();
-  void off();
+  void on(bool force=false);
+  void off(bool force=false);
+  void toggle(bool force=false);
   bool state();
-  void clear() {
-    off();
-  }
+  void lock(bool state);
+  void clear();
+  void update();
 
   HandlerInfo getHandlerInfo() {
     HandlerInfo info;

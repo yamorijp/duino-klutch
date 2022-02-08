@@ -4,7 +4,7 @@ const docprint = require("docprint")
 
 docprint({
   filepath: "apidoc/api.apib",
-  destination: "data/",
+  destination: "data/docs/",
   header: "apidoc/header.html",
   css: "apidoc/style.css",
   title: "Duino Klutch API"

@@ -9,6 +9,11 @@
 #include <SPI.h>
 #include <LedMatrix.h>
 
+enum {
+  MATRIXLED_MODE_IDLE=0,
+  MATRIXLED_MODE_ACTIVE=1
+};
+
 const uint8_t MESSAGE_QUEUE_SIZE = 10;
 const uint16_t REFRESH_SCROLL_MS = 80;
 
@@ -41,27 +46,28 @@ public:
 class MatrixLed : public BaseHandler {
 
 private:
-  std::unique_ptr<LedMatrix> _ledMatrix;
-  std::deque<MessageItem> _queue;
-  Ticker _ticker;
+  String _route;
   uint8_t _csPin;
   uint8_t _numDisplays;
   uint16_t _countdown;
-  String _route;
+  uint8_t _mode;
+  Ticker _ticker;
+  std::unique_ptr<LedMatrix> _ledMatrix;
+  std::deque<MessageItem> _queue;
+
+  void setMode(uint8_t mode);
 
 public:
-  MatrixLed(String route, uint8_t csPin, uint8_t numDisplays=1) {
-    _route = route;
-    _csPin = csPin;
-    _numDisplays = numDisplays;
-  };
+  MatrixLed(String route, uint8_t csPin, uint8_t numDisplays=1) :
+    _route(route), _csPin(csPin), _numDisplays(numDisplays), _mode(MATRIXLED_MODE_IDLE) {};
   void setup(ESP8266WebServer* server, WebSocketsServer* socket);
   void clear();
   void message(String data, int16_t n, bool instant);
   void next();
   void columns(String data);
   static void scrollText(MatrixLed* obj);
-  
+  uint8_t getMode();
+
   HandlerInfo getHandlerInfo() {
     HandlerInfo info;
     info.type = "MatrixLed";

@@ -1,11 +1,15 @@
 #include "InputSwitch.h"
-
+#include <ezTime.h>
 
 void InputSwitch::setup(ESP8266WebServer* server, WebSocketsServer* socket) {
   BaseHandler::setup(server, socket);
-  pinMode(_pin, INPUT);
-  readState();
+  pinMode(_pin, INPUT_PULLUP);
+  readState(true);
   _ticker.attach_ms(_interval, tick, this);
+
+  server->on(_route, [this, server]() {
+    this->success(this->_data);
+  });
 
   server->on(_route + "/state", [this, server]() {
     this->success(this->_data);
@@ -19,27 +23,31 @@ void InputSwitch::loop() {
   }
 }
 
-void InputSwitch::update() {
-  String json;
-  StaticJsonBuffer<200> buff;
-  JsonObject& data = buff.createObject();
-  data["state"] = this->_state;
-  data["updated"] = this->_updated;
-  data.printTo(json);
-  _data = json;
-
-  broadcast(_route, _data);
-}
-
-void InputSwitch::readState() {
+void InputSwitch::readState(bool force) {
   bool state = digitalRead(_pin);
-  if (state != _state) {
+  if (force || state != _state) {
     _state = state;
-    _updated = time(NULL);
+    _updated = now();
     update();
   }
 }
 
+bool InputSwitch::getState() {
+  return _state;
+}
+
 void InputSwitch::tick(InputSwitch* obj) {
   obj->_dirty = true;
+}
+
+void InputSwitch::update() {
+  String json;
+  StaticJsonBuffer<200> buff;
+  JsonObject& data = buff.createObject();
+  data["state"] = _state;
+  data["updated"] = _updated;
+  data.printTo(json);
+  _data = json;
+  broadcast(_route, _data);
+  BaseHandler::update();
 }
