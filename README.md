@@ -14,35 +14,35 @@ esp8266搭載ボード(NodeMCUV2)へ接続したセンサーやモジュール�
 [duino-klutch-client](https://github.com/yamorijp/duino-klutch-client)
 
 
-## 使用モジュール
-
-* esp8266搭載ボード (NodeMcuV2,V3)
-* 8x8 Matrix LEDモジュール (MAX7219)
-* 4桁7セグメントディスプレイモジュール (TM1637)
-* 湿温度センサーモジュール (DHT11)
-* CdSセンサーモジュール
-* マイクロ波レーダーセンサースイッチモジュール (RCWL-0516)
-* リレースイッチモジュール
-* IR送信モジュール
-* RGB LEDモジュール
-
-
-## ワイヤリング
+## duino-k構成のワイヤリング (profile/duino_k.h)
 
 <p align="center">
-<img alt="配線図" src="https://raw.githubusercontent.com/yamorijp/duino-klutch/master/wiring.png" width="600" />
-</p>
+<img alt="配線図" src="https://raw.githubusercontent.com/yamorijp/duino-klutch/master/duino-k-wiring.png" width="600" />
 
 デバイス                           | 使用ピン                 | 備考
 ---------------------------------|------------------------|---
-8x8 Matrix LEDモジュール            | CS=D4, CLK=D5, DIN=D7 |   
+8x8 Matrix LEDモジュール             | CS=D8, CLK=D5, DIN=D7 | x2
 4桁7セグメントディスプレイモジュール       | CLK=D2, DIO=D3        |   
-湿温度センサーモジュール               | OUT=D1                |  
-CdSセンサーモジュール                 | AO=A0                 |   
-マイクロ波レーダーセンサースイッチモジュール | OUT=D6                |   
-リレースイッチモジュール                | S=D0                  |   
-IR送信モジュール                    | S=D8                  |   
-RGB LEDモジュール                   | (R=D7, G=D4, B=D5)    | 初期構成では未使用
+湿温度センサーモジュール                | OUT=D6                |  
+CdSセンサーモジュール                 | AO=A0                  |   
+pcdzピエゾブザー                     | D1                     | 
+
+
+## duino-h構成のワイヤリング (profile/duino_h.h)
+
+<p align="center">
+<img alt="配線図" src="https://raw.githubusercontent.com/yamorijp/duino-klutch/master/duino-h-wiring.png" width="600" />
+
+
+デバイス                           | 使用ピン                 | 備考
+---------------------------------|------------------------|---
+リレースイッチモジュール#1             | D1                     | 
+リレースイッチモジュール#2             | D0                     |
+SSD1306 LCD 128x32               | DIO=D3, CLK=D23        |   
+PIRモーションセンサーモジュール         | D5                     | SW#1連動
+トグルスイッチ                      | D6                     | SW#1連動  
+pcdzピエゾブザー                    | D7                     | 
+
 
 
 ## スケッチのビルドとアップロード
